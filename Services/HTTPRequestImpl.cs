@@ -15,7 +15,7 @@ namespace ProyectGarantia.Services
                 try
                 {
                     string apiUrl = "https://190.99.17.152:10887/Api/Datoslotegarantias?Fchdesde=01/08/2023&Fchhasta=31/08/2023&Agencia=0125";
-
+                    //string apiUrl = "https://jsonplaceholder.typicode.com/users";
                     HttpResponseMessage response = await client.GetAsync(apiUrl);
 
                     if (response.IsSuccessStatusCode)
@@ -23,7 +23,7 @@ namespace ProyectGarantia.Services
                         string content = await response.Content.ReadAsStringAsync();
 
                         // Deserializar la respuesta en un objeto
-                        DatosLoteGarantiasResponse objeto = JsonConvert.DeserializeObject<DatosLoteGarantiasResponse>(content);
+                        //DatosLoteGarantiasResponse objeto = JsonConvert.DeserializeObject<DatosLoteGarantiasResponse>(content);
 
                         // Aquí puedes trabajar con el objeto si es necesario
 

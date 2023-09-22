@@ -28,20 +28,19 @@ namespace ProyectGarantia.Controllers
             _httpRequest = httpRequest;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Prueba()
         {
-            var informacionServicio = _httpRequest.ObtenerMensajeAsync();
+            var informacionServicio = await _httpRequest.ObtenerMensajeAsync();
             return Ok(informacionServicio);
         }
-        //public IActionResult Index(int page = 1)
-        //{
-        //    //var model = new DALote();
-        //    var pageNumber = page;
-        //    var informacionDB = DALote.GetLote();
-        //    var Datos = informacionDB.OrderByDescending(x => x.Id).ToList().ToPagedList(pageNumber, 8);
-        //    //var informacionServicio = _httpRequest.ObtenerMensaje();
-        //    return View(Datos);
-        //}
+        public IActionResult Index(int page = 1)
+        {
+            //var model = new DALote();
+            var pageNumber = page;
+            var informacionDB = DALote.GetLote();
+            var Datos = informacionDB.OrderByDescending(x => x.Id).ToList().ToPagedList(pageNumber, 8);
+            return View(Datos);
+        }
         //Http Request
         [HttpGet("WebAppServicio")]
         public IActionResult Servicio()
