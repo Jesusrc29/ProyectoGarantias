@@ -7,6 +7,7 @@ using ProyectGarantia.Data.DataAcces;
 using ProyectGarantia.Data.Interfaces;
 using ProyectGarantia.Models;
 using ProyectGarantia.Services;
+using static ProyectGarantia.Data.ApplicationDbContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +17,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<Usuario>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IDADetalleLoteModelo, DADetalleLoteModelo>();

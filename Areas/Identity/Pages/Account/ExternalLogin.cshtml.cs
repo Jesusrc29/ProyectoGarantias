@@ -17,23 +17,24 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using static ProyectGarantia.Data.ApplicationDbContext;
 
 namespace ProyectGarantia.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class ExternalLoginModel : PageModel
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly IUserStore<IdentityUser> _userStore;
-        private readonly IUserEmailStore<IdentityUser> _emailStore;
+        private readonly SignInManager<Usuario> _signInManager;
+        private readonly UserManager<Usuario> _userManager;
+        private readonly IUserStore<Usuario> _userStore;
+        private readonly IUserEmailStore<Usuario> _emailStore;
         private readonly IEmailSender _emailSender;
         private readonly ILogger<ExternalLoginModel> _logger;
 
         public ExternalLoginModel(
-            SignInManager<IdentityUser> signInManager,
-            UserManager<IdentityUser> userManager,
-            IUserStore<IdentityUser> userStore,
+            SignInManager<Usuario> signInManager,
+            UserManager<Usuario> userManager,
+            IUserStore<Usuario> userStore,
             ILogger<ExternalLoginModel> logger,
             IEmailSender emailSender)
         {
@@ -153,19 +154,19 @@ namespace ProyectGarantia.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
 
-                await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
-                await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+                await _userStore.SetUserNameAsync((Usuario)user, Input.Email, CancellationToken.None);
+                await _emailStore.SetEmailAsync((Usuario)user, Input.Email, CancellationToken.None);
 
-                var result = await _userManager.CreateAsync(user);
+                var result = await _userManager.CreateAsync((Usuario)user);
                 if (result.Succeeded)
                 {
-                    result = await _userManager.AddLoginAsync(user, info);
+                    result = await _userManager.AddLoginAsync((Usuario)user, info);
                     if (result.Succeeded)
                     {
                         _logger.LogInformation("User created an account using {Name} provider.", info.LoginProvider);
 
-                        var userId = await _userManager.GetUserIdAsync(user);
-                        var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                        var userId = await _userManager.GetUserIdAsync((Usuario)user);
+                        var code = await _userManager.GenerateEmailConfirmationTokenAsync((Usuario)user);
                         code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                         var callbackUrl = Url.Page(
                             "/Account/ConfirmEmail",
@@ -182,7 +183,7 @@ namespace ProyectGarantia.Areas.Identity.Pages.Account
                             return RedirectToPage("./RegisterConfirmation", new { Email = Input.Email });
                         }
 
-                        await _signInManager.SignInAsync(user, isPersistent: false, info.LoginProvider);
+                        await _signInManager.SignInAsync((Usuario)user, isPersistent: false, info.LoginProvider);
                         return LocalRedirect(returnUrl);
                     }
                 }
@@ -201,7 +202,7 @@ namespace ProyectGarantia.Areas.Identity.Pages.Account
         {
             try
             {
-                return Activator.CreateInstance<IdentityUser>();
+                return Activator.CreateInstance<Usuario>();
             }
             catch
             {
@@ -211,13 +212,13 @@ namespace ProyectGarantia.Areas.Identity.Pages.Account
             }
         }
 
-        private IUserEmailStore<IdentityUser> GetEmailStore()
+        private IUserEmailStore<Usuario> GetEmailStore()
         {
             if (!_userManager.SupportsUserEmail)
             {
                 throw new NotSupportedException("The default UI requires a user store with email support.");
             }
-            return (IUserEmailStore<IdentityUser>)_userStore;
+            return (IUserEmailStore<Usuario>)_userStore;
         }
     }
 }

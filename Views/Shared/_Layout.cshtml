@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity;
+@using static ProyectGarantia.Data.ApplicationDbContext;
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -31,9 +35,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="DetalleLote" asp-action="Index">DetalleLote</a>
                         </li>*@
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Lote" asp-action="Index">Lote</a>
-                        </li>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Lote" asp-action="Index">Lote</a>
+                            </li>
+                        }
+                        
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

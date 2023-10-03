@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProyectGarantia.Data;
+using ProyectGarantia.Data.Data_Acces;
 using ProyectGarantia.Data.Interfaces;
 using ProyectGarantia.Models;
 using ProyectGarantia.Services;
 using X.PagedList;
+using static ProyectGarantia.Data.ApplicationDbContext;
 
 namespace ProyectGarantia.Controllers
 {
@@ -19,13 +22,19 @@ namespace ProyectGarantia.Controllers
     {
         public readonly IDALote DALote;
         public readonly IHTTPRequest _httpRequest;
+        //crear objeto para obtener el nombre del usuario logueado
+        private readonly UserManager<Usuario> usuario;
+        private readonly ApplicationDbContext _dbAgencia;
+
         //[Route("WebAppOpe")]
 
-        public LoteController(IDALote DALote, IHTTPRequest httpRequest)
+        public LoteController(IDALote DALote, IHTTPRequest httpRequest, UserManager<Usuario> usuario, ApplicationDbContext dbAgencia)
 
         {
             this.DALote = DALote;
             _httpRequest = httpRequest;
+            this.usuario = usuario;
+            _dbAgencia = dbAgencia;
         }
 
         public async Task<IActionResult> Prueba()
@@ -80,21 +89,59 @@ namespace ProyectGarantia.Controllers
         //    }
         //}
 
-
-        public IActionResult Create()
+        //public IActionResult Create()
+        public async Task<IActionResult> CreateAsync()
         {
             //var Lote=new DALote();
             //ViewBag.Lote = DALote.GetLote();
+            // Obtener el nombre del usuario logueado
+            var usuarioLogueado = await usuario.GetUserAsync(User);
+            var codAgenciaID = usuarioLogueado.AgenciaId;
 
+            // Intentar obtener el código de agencia
+            var codAgencia = _dbAgencia.Agencias.SingleOrDefault(c => c.Id == codAgenciaID)?.Codigo;
+
+            // Variable del número correlativo
+            string numeroCorrelativo = "";
+
+            if (!string.IsNullOrEmpty(codAgencia))
+            {
+                var contadorAgencia = _dbAgencia.ContadorLotes.SingleOrDefault(c => c.CodAgencia == codAgencia);
+
+                if (contadorAgencia == null)
+                {
+                    contadorAgencia = new ContadorLotes { CodAgencia = codAgencia, Contador = 1 };
+                    _dbAgencia.ContadorLotes.Add(contadorAgencia);
+                }
+                else
+                {
+                    if (contadorAgencia.Contador > 99998)
+                    {
+                        // Cambiar el formato a D6 y reiniciar el contador a 1
+                        contadorAgencia.Contador = 1;
+                        numeroCorrelativo = $"{codAgencia:D4}-{contadorAgencia.Contador:D6}";
+                    }
+                    else
+                    {
+                        contadorAgencia.Contador++;
+                        numeroCorrelativo = $"{codAgencia:D4}-{contadorAgencia.Contador:D5}";
+                    }
+                }
+                //Actualizar el contador en la base de datos
+                await _dbAgencia.SaveChangesAsync();
+            }
+
+            // Asignar el número correlativo a ViewBag
+            ViewBag.NumeroCorrelativo = numeroCorrelativo;
             return View();
         }
 
         [HttpPost]
         public IActionResult Create(Lote Lote)
+        //public async Task<IActionResult> CreateAsync(Lote Lote)
         {
             Lote.Id = 0;
             Lote.FechaCreacion = DateOnly.FromDateTime(DateTime.Now.Date);
-            //var modelinsert = new DALote();
             var model = DALote.InsertLote(Lote);
             if (model > 0)
             {
