@@ -4,23 +4,82 @@
 
 @{
     ViewData["Title"] = "Index";
+
 }
 
-<h1>Index</h1>
+<h1>Detalle del Lote</h1>
 
 <p>
     @*<a asp-action="Create">Create New</a>*@
-    <a class="btn btn-success btn-sm" role="button" asp-action="Create">
+    @*<a class="btn btn-success btn-sm" role="button" asp-action="Create">
         Nuevo
-    </a>
+    </a>*@
     <a class="btn btn-dark btn-sm" role="button" asp-controller="Lote" asp-action="Index">Volver a Lote</a>
 </p>
-<table class="table table-hover table-bordered table-sm">
+<div>
+    <h4>Lote</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lote)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstOrDefault().Lote.NumeroCorrelativo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lote.Estado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstOrDefault().Lote.Estado)
+        </dd>
+        <dt class="col-sm-2">
+            Fecha Creación
+        </dt>
+        <dd class="col-sm-10">
+            @* @Model.FirstOrDefault().Lote.FechaCreacion.ToString("dd/MM/yyyy") *@
+            @(Model.FirstOrDefault()?.Lote?.FechaCreacion.ToString("dd/MM/yyyy") ?? "")
+        </dd>
+        <dt class="col-sm-2">
+            Creador
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstOrDefault().Lote.NombreCreador)
+        </dd>
+        <dt class="col-sm-2">
+            Agencia
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstOrDefault().CentroCosto)
+        </dd>
+        <dt class="col-sm-2">
+            Fecha Envio
+        </dt>
+        <dd class="col-sm-10">
+            @(Model.FirstOrDefault()?.FechaEnvio.ToString("dd/MM/yyyy") ?? "")
+            @* @Model.FirstOrDefault().FechaEnvio.ToString("dd/MM/yyyy") *@
+        </dd>
+    </dl>
+</div>
+<div>
+    <div class="col-6">
+        <form asp-controller="DetalleLoteModelo" asp-action="Index" method="get">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Busqueda" aria-label="Buscar" aria-describedby="basic-addon2" name="buscar">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        <i class="material-symbols-outlined">
+                            search
+                        </i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <table class="table table-hover table-bordered table-sm">
     <thead>
         <tr class="table-info">
-            <th>
-                @Html.DisplayNameFor(model => model.Lote)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.FechaOtorgada)
             </th>
@@ -28,59 +87,23 @@
                 Cliente
             </th>
             <th>
-                Agencia
-            </th>
-            <th>
                 N° Garantías
             </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.GVDocOriginal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GVCopiaRevision)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GVTraspaso)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GHEscritura)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GHAvaluo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GHRevisionIP)
-            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.ValorGarantia)
             </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.Contrato)
-            </th>
             <th>
-                @Html.DisplayNameFor(model => model.Pagare)*@
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumeroCorrelativo)
-            </th>
-            <th>
-                Oficial
-            </th>
+                Asesor
+            </th>@* 
             <th>
                 @Html.DisplayNameFor(model => model.FechaEnvio)
-            </th>
-            <th>
-                Creador -  Lote
-            </th>
+            </th> *@
             <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Lote.NumeroCorrelativo)
-            </td>
             <td>
                     @item.FechaOtorgada.ToString("dd/MM/yyyy")
             </td>
@@ -88,29 +111,8 @@
                 @Html.DisplayFor(modelItem => item.NombreCliente)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CentroCosto)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.CantidadGarantias)
             </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.GVDocOriginal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GVCopiaRevision)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GVTraspaso)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GHEscritura)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GHAvaluo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GHRevisionIP)
-            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.ValorGarantia)
             </td>
@@ -121,28 +123,88 @@
                 @Html.DisplayFor(modelItem => item.Pagare)
             </td>*@
             <td>
-                @Html.DisplayFor(modelItem => item.NumeroCorrelativo)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.NombreAsesor)
             </td>
-            <td>
+            @* <td>
                     @item.FechaEnvio.ToString("dd/MM/yyyy")
-            </td>
+            </td> *@
             <td>
-                @Html.DisplayFor(modelItem => item.NombreCreador)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                  <a class="btn btn-warning btn-sm" role="button" asp-action="Edit" asp-route-loteId="@item.LoteId" asp-route-id="@item.Id">Edit</a>
+                  <a class="btn btn-info btn-sm" role="button" asp-action="Details" asp-route-loteId="@item.LoteId" asp-route-id="@item.Id">Details</a>
+                  <a class="btn btn-danger btn-sm" role="button" asp-action="Delete" asp-route-loteId="@item.LoteId" asp-route-id="@item.Id">Delete</a>
+                        @if (item.Estado == 0)
+                        {
+                            <a class="btn btn-success btn-sm btn-aceptar" role="button"
+                               asp-action="BtnAceptar" asp-route-id="@item.Id"
+                               data-route-id-lote="@Model.FirstOrDefault().Lote.Id">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                </svg>
+                            </a>
+                            <a class="btn btn-danger btn-sm btn-rechazar" role="button"
+                               asp-action="BtnRechazar" asp-route-id="@item.Id"
+                               data-route-id-lote="@Model.FirstOrDefault().Lote.Id">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                                </svg>
+                            </a>
+                        }
+
+                        <a class="btn btn-secondary btn-sm" role="button" asp-controller="Documentacion" asp-action="index" asp-route-id="@item.Id">Generar Documentación</a>
             </td>
         </tr>
 }
     </tbody>
     <tfoot>
         @Html.PagedListPager((IPagedList)Model,
-        page=>Url.Action("Index",
-        "DetalleLoteModelo",new{page=page}),X.PagedList.Web.Common.PagedListRenderOptions.MinimalWithItemCountText)
+        page=>Url.Action("index",
+        "DetalleLoteModelo",new{page=page,id=Model.FirstOrDefault().Lote.Id})
+        ,X.PagedList.Web.Common.PagedListRenderOptions.MinimalWithItemCountText)
     </tfoot>
 </table>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            // Función para enviar la solicitud AJAX al hacer clic en BtnAceptar o BtnRechazar
+            function enviarSolicitud(id, action, idLote) {
+                $.ajax({
+                    url: '@Url.Action("", "")' + '/' + action,
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (response) {
+                        if (response.exitoso) {
+                            // Redirigir a la URL de DetalleLoteModelo/Index con el id del lote
+                            window.location.href = '@Url.Action("Index", "DetalleLoteModelo", new { id = "__id__" })'.replace('__id__', idLote);
+                        } else {
+                            // Manejar otros casos de éxito o mostrar mensajes
+                            alert(response.mensaje);
+                        }
+                    },
+                    error: function () {
+                        // Manejar errores de la solicitud AJAX si es necesario
+                        alert("Error al procesar la solicitud");
+                    }
+                });
+            }
+
+            // Manejar clic en BtnAceptar
+            $('.btn-aceptar').on('click', function () {
+                var id = $(this).attr('data-route-id');
+                var action = $(this).attr('data-action');
+                var idLote = $(this).attr('data-route-id-lote');
+                enviarSolicitud(id, action, idLote);
+            });
+
+            // Manejar clic en BtnRechazar
+            $('.btn-rechazar').on('click', function () {
+                var id = $(this).attr('data-route-id');
+                var action = $(this).attr('data-action');
+                var idLote = $(this).attr('data-route-id-lote');
+                enviarSolicitud(id, action, idLote);
+            });
+        });
+    </script>
+}
+

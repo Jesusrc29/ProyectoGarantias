@@ -16,7 +16,6 @@ namespace ProyectGarantia.Models
         [Column("Nombre")]
         public string Nombre { get; set; }
 
-        public List<Garantia> Garantias { get; set; }
     }
 
 }

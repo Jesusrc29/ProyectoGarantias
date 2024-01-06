@@ -19,7 +19,6 @@ namespace ProyectGarantia.Controllers
             dbDetLote = context;
         }
 
-        // GET: DetalleLote
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = dbDetLote.DetalleLote.Include(d => d.Agencia).Include(d => d.Cliente).Include(d => d.Lote);
@@ -27,7 +26,6 @@ namespace ProyectGarantia.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: DetalleLote/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || dbDetLote.DetalleLote == null)
@@ -48,7 +46,6 @@ namespace ProyectGarantia.Controllers
             return View(detalleLote);
         }
 
-        // GET: DetalleLote/Create
         public IActionResult Create()
         {
             ViewData["AgenciaId"] = new SelectList(dbDetLote.Agencia, "Id", "Nombre");
@@ -57,7 +54,6 @@ namespace ProyectGarantia.Controllers
             return View();
         }
 
-        // POST: DetalleLote/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,LoteId,FechaOtorgada,ClienteId,AgenciaId,NombreAsesor,FechaEnvio,CantidadGarantias")] DetalleLote detalleLote)
@@ -70,8 +66,6 @@ namespace ProyectGarantia.Controllers
             }
             else
             {
-                // Convierte el objeto dinámico en una lista explícita para que puedas acceder a la propiedad Count
-                // Convierte los errores de validación en una lista para pasarlo a la vista
                 var validationErrors = ModelState.Values.SelectMany(v => v.Errors.Select(e => e.ErrorMessage)).ToList();
                 ViewBag.ValidationErrorsList = validationErrors;
             }
@@ -81,7 +75,6 @@ namespace ProyectGarantia.Controllers
             return View(detalleLote);
         }
 
-        // GET: DetalleLote/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || dbDetLote.DetalleLote == null)
@@ -100,7 +93,6 @@ namespace ProyectGarantia.Controllers
             return View(detalleLote);
         }
 
-        // POST: DetalleLote/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,LoteId,FechaOtorgada,ClienteId,AgenciaId,NombreAsesor,FechaEnvio,CantidadGarantias")] DetalleLote detalleLote)
@@ -136,7 +128,6 @@ namespace ProyectGarantia.Controllers
             return View(detalleLote);
         }
 
-        // GET: DetalleLote/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || dbDetLote.DetalleLote == null)
@@ -157,7 +148,6 @@ namespace ProyectGarantia.Controllers
             return View(detalleLote);
         }
 
-        // POST: DetalleLote/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

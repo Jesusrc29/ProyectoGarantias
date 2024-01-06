@@ -10,33 +10,36 @@ namespace ProyectGarantia.Models
         [Column("Id")]
         public int Id { get; set; }
 
-        [Column("DetalleLoteId")]
-        public int DetalleLoteId { get; set; }
-        [ForeignKey("DetalleLoteId")]
-        public DetalleLote DetalleLote { get; set; }
+        [ForeignKey("DetalleLoteModeloId")]
+        public int PrestamoId { get; set; }
+        public DetalleLoteModelo DetalleLoteModelo { get; set; }
 
-        [Column("Tipo")]
-        public TipoGarantia Tipo { get; set; }
+        [Column("CorrGarantia")]
+        public string CorrGarantia { get; set; }
 
-        [Column("Estado")]
-        public EstadoGarantia Estado { get; set; }
+        [Column("NombreAval")]
+        public string NombreAval { get; set; }
 
-        [Column("AlmacenId")]
-        public int AlmacenId { get; set; }
-        [ForeignKey("AlmacenId")]
-        public Almacen Almacen { get; set; }
-    }
+        [Column("MontoGarantia")]
+        public double MontoGarantia { get; set; }
 
-    public enum TipoGarantia
-    {
-        Vehiculo,
-        Hipotecaria
-    }
+        [Column("DescripAval")]
+        public string DescripAval { get; set; }
+
+		[Column("Estado")]
+		public EstadoGarantia Estado { get; set; }
+
+	}
+
 
     public enum EstadoGarantia
     {
         Activa,
         Inactiva,
-        EnDemanda
+        EnDemanda,
+        SalidaPrestamoDocumentacion,
+        SalidaCambio,
+        IngresoCambio,
+        BajaCancelacion
     }
 }

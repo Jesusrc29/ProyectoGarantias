@@ -1,5 +1,4 @@
-﻿@model ProyectGarantia.Models.DetalleLoteModelo
-
+﻿@model ProyectGarantia.Models.DetalleLoteModelo 
 @{
     ViewData["Title"] = "Edit";
 }
@@ -10,70 +9,78 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" id="editForm">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
+            @* <div class="form-group">
                 <label asp-for="LoteId" class="control-label"></label>
                 <select asp-for="LoteId" class="form-control"
                         asp-items="@(new SelectList(ViewBag.Lote,"Id","NumeroCorrelativo"))">
                 </select>
                 <span asp-validation-for="LoteId" class="text-danger"></span>
-            </div>
+            </div> *@
             <div class="form-group">
                 <label asp-for="FechaOtorgada" class="control-label"></label>
-                <input asp-for="FechaOtorgada" class="form-control" type="date" />
+                <input asp-for="FechaOtorgada" class="form-control" readonly="readonly" />
                 <span asp-validation-for="FechaOtorgada" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="NombreCliente" class="control-label"></label>
-                <input asp-for="NombreCliente" class="form-control" />
+                <input asp-for="NombreCliente" class="form-control" readonly="readonly" />
                 <span asp-validation-for="NombreCliente" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CentroCosto" class="control-label"></label>
-                <input asp-for="CentroCosto" class="form-control" />
+                <input asp-for="CentroCosto" class="form-control" readonly="readonly" />
                 <span asp-validation-for="CentroCosto" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CantidadGarantias" class="control-label"></label>
-                <input asp-for="CantidadGarantias" class="form-control" />
+                <input asp-for="CantidadGarantias" class="form-control" readonly="readonly" />
                 <span asp-validation-for="CantidadGarantias" class="text-danger"></span>
             </div>
+            <h4>Garantías Vehiculares</h4>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="GVDocOriginal" /> @Html.DisplayNameFor(model => model.GVDocOriginal)
+                    <input class="form-check-input" asp-for="GVDocOriginal" id="GVDocOriginalCheckbox" /> Documentación Original
                 </label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="GVCopiaRevision" /> @Html.DisplayNameFor(model => model.GVCopiaRevision)
+                    <input class="form-check-input" asp-for="GVCopiaRevision" id="GVCopiaRevisionCheckbox" /> Copia de Revisión
                 </label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="GVTraspaso" /> @Html.DisplayNameFor(model => model.GVTraspaso)
+                    <input class="form-check-input" asp-for="GVTraspaso" id="GVTraspasoCheckbox" /> Traspaso
+                </label>
+            </div>
+            <h4>Garantías Hipotecarias</h4>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="GHEscritura" id="GHEscrituraCheckbox" /> Escritura Pública
                 </label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="GHEscritura" /> @Html.DisplayNameFor(model => model.GHEscritura)
+                    <input class="form-check-input" asp-for="GHAvaluo" id="GHAvaluoCheckbox" /> Avalúo
                 </label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="GHAvaluo" /> @Html.DisplayNameFor(model => model.GHAvaluo)
+                    <input class="form-check-input" asp-for="GHRevisionIP" id="GHRevisionIPCheckbox" /> Documentación del IP
                 </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="GHRevisionIP" /> @Html.DisplayNameFor(model => model.GHRevisionIP)
-                </label>
-            </div>
+            </div>@* 
             <div class="form-group">
                 <label asp-for="ValorGarantia" class="control-label"></label>
-                <input asp-for="ValorGarantia" class="form-control" />
+                <input asp-for="ValorGarantia" class="form-control" readonly="readonly" />
                 <span asp-validation-for="ValorGarantia" class="text-danger"></span>
+            </div> *@
+<h4>Documentos</h4>
+            <div class="form-group">
+                <label asp-for="NumPrestamo" class="control-label"></label>
+                <input asp-for="NumPrestamo" class="form-control" readonly="readonly" />
+                <span asp-validation-for="NumPrestamo" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
@@ -87,35 +94,239 @@
             </div>
             <div class="form-group">
                 <label asp-for="NumeroCorrelativo" class="control-label"></label>
-                <input asp-for="NumeroCorrelativo" class="form-control" />
+                <input asp-for="NumeroCorrelativo" class="form-control" readonly="readonly" />
                 <span asp-validation-for="NumeroCorrelativo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="NombreAsesor" class="control-label"></label>
-                <input asp-for="NombreAsesor" class="form-control" />
+                <input asp-for="NombreAsesor" class="form-control" readonly="readonly" />
                 <span asp-validation-for="NombreAsesor" class="text-danger"></span>
-            </div>
+            </div>@* 
             <div class="form-group">
                 <label asp-for="FechaEnvio" class="control-label"></label>
-                <input asp-for="FechaEnvio" class="form-control" />
+                <input asp-for="FechaEnvio" class="form-control" readonly="readonly" />
                 <span asp-validation-for="FechaEnvio" class="text-danger"></span>
-            </div>
+            </div> *@
             <div class="form-group">
                 <label asp-for="NombreCreador" class="control-label"></label>
-                <input asp-for="NombreCreador" class="form-control" />
+                <input asp-for="NombreCreador" class="form-control" readonly="readonly" />
                 <span asp-validation-for="NombreCreador" class="text-danger"></span>
+            </div>
+            <div class="success guardado-exitoso" style="display: none;">
+                Debe subir los archivos necesarios para las garantías
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-6">
+        <h4>Subir Archivos</h4>
+        <form class="form-subir-archivos" method="post" asp-controller="Documento" asp-action="SubirArchivos" enctype="multipart/form-data">
+            <div class="form-group file-upload" id="GVDocOriginalUpload" style="display: none;">
+                <label for="GVDocOriginalFile">Subir archivo para Documentación Original:</label>
+                <div class="success guardado-exitoso" style="display: none;">
+                    Guardado exitosamente
+                </div>
+                <input type="file" id="GVDocOriginalFile" name="files" class="form-control" />
+                <input type="hidden" name="detalleLoteModeloId" value="@Model.Id" />
+                <input type="hidden" name="tipoDocumento" value="GVDocOriginal" />
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+        <form class="form-subir-archivos" method="post" asp-controller="Documento" asp-action="SubirArchivos" enctype="multipart/form-data">
+            <div class="form-group file-upload" id="GVCopiaRevisionUpload" style="display: none;">
+                <label for="GVCopiaRevisionFile">Subir archivo para Copia Revisión:</label>
+                <div class="success guardado-exitoso" style="display: none;">
+                    Guardado exitosamente
+                </div>
+                <input type="file" id="GVCopiaRevisionFile" name="files" class="form-control" />
+                <input type="hidden" name="detalleLoteModeloId" value="@Model.Id" />
+                <input type="hidden" name="tipoDocumento" value="GVCopiaRevision" />
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+        <form class="form-subir-archivos" method="post" asp-controller="Documento" asp-action="SubirArchivos" enctype="multipart/form-data">
+            <div class="form-group file-upload" id="GVTraspasoUpload" style="display: none;">
+                <label for="GVTraspasoFile">Subir archivo para Traspaso:</label>
+                <div class="success guardado-exitoso" style="display: none;">
+                    Guardado exitosamente
+                </div>
+                <input type="file" id="GVTraspasoFile" name="files" class="form-control" />
+                <input type="hidden" name="detalleLoteModeloId" value="@Model.Id" />
+                <input type="hidden" name="tipoDocumento" value="GVTraspaso" />
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+
+        <form class="form-subir-archivos" method="post" asp-controller="Documento" asp-action="SubirArchivos" enctype="multipart/form-data">
+            <div class="form-group file-upload" id="GHEscrituraUpload" style="display: none;">
+                <label for="GHEscrituraFile">Subir archivo para Escritura Pública:</label>
+                <div class="success guardado-exitoso" style="display: none;">
+                    Guardado exitosamente
+                </div>
+                <input type="file" id="GHEscrituraFile" name="files" class="form-control" />
+                <input type="hidden" name="detalleLoteModeloId" value="@Model.Id" />
+                <input type="hidden" name="tipoDocumento" value="GHEscritura" />
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+        <form class="form-subir-archivos" method="post" asp-controller="Documento" asp-action="SubirArchivos" enctype="multipart/form-data">
+            <div class="form-group file-upload" id="GHAvaluoUpload" style="display: none;">
+                <label for="GHAvaluoFile">Subir archivo para Avalúo:</label>
+                <div class="success guardado-exitoso" style="display: none;">
+                    Guardado exitosamente
+                </div>
+                <input type="file" id="GHAvaluoFile" name="files" class="form-control" />
+                <input type="hidden" name="detalleLoteModeloId" value="@Model.Id" />
+                <input type="hidden" name="tipoDocumento" value="GHAvaluo" />
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+        <form class="form-subir-archivos" method="post" asp-controller="Documento" asp-action="SubirArchivos" enctype="multipart/form-data">
+            <div class="form-group file-upload" id="GHRevisionIPUpload" style="display: none;">
+                <label for="GHRevisionIPFile">Subir archivo para Documentación IP:</label>
+                <div class="success guardado-exitoso" style="display: none;">
+                    Guardado exitosamente
+                </div>
+                <input type="file" id="GHRevisionIPFile" name="files" class="form-control" />
+                <input type="hidden" name="detalleLoteModeloId" value="@Model.Id" />
+                <input type="hidden" name="tipoDocumento" value="GHRevisionIP" />
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
 </div>
 
+<div class="row">
+    
+</div>
+<input type="hidden" name="loteId" value="@Model.LoteId" />
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" asp-route-id="@Model.LoteId">Back to List</a>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $(document).ready(function () {
+            // Función para mostrar u ocultar los div de carga de archivos según el estado inicial de los checkboxes
+            function toggleUploadDiv(checkbox, uploadDiv) {
+                if (checkbox.prop('checked')) {
+                    uploadDiv.show();
+                } else {
+                    uploadDiv.hide();
+                }
+            }
+
+            // Obtener los checkboxes y los div de carga de archivos por su ID
+            var GVDocOriginalCheckbox = $("#GVDocOriginalCheckbox");
+            var GVCopiaRevisionCheckbox = $("#GVCopiaRevisionCheckbox");
+            var GVTraspasoCheckbox = $("#GVTraspasoCheckbox");
+            var GHEscrituraCheckbox = $("#GHEscrituraCheckbox");
+            var GHAvaluoCheckbox = $("#GHAvaluoCheckbox");
+            var GHRevisionIPCheckbox = $("#GHRevisionIPCheckbox");
+
+            var GVDocOriginalUpload = $("#GVDocOriginalUpload");
+            var GVCopiaRevisionUpload = $("#GVCopiaRevisionUpload");
+            var GVTraspasoUpload = $("#GVTraspasoUpload");
+            var GHEscrituraUpload = $("#GHEscrituraUpload");
+            var GHAvaluoUpload = $("#GHAvaluoUpload");
+            var GHRevisionIPUpload = $("#GHRevisionIPUpload");
+
+            // Mostrar u ocultar los div de carga de archivos según el estado inicial de los checkboxes
+            toggleUploadDiv(GVDocOriginalCheckbox, GVDocOriginalUpload);
+            toggleUploadDiv(GVCopiaRevisionCheckbox, GVCopiaRevisionUpload);
+            toggleUploadDiv(GVTraspasoCheckbox, GVTraspasoUpload);
+            toggleUploadDiv(GHEscrituraCheckbox, GHEscrituraUpload);
+            toggleUploadDiv(GHAvaluoCheckbox, GHAvaluoUpload);
+            toggleUploadDiv(GHRevisionIPCheckbox, GHRevisionIPUpload);
+
+            // Manejar el cambio de los checkboxes
+            GVDocOriginalCheckbox.change(function () {
+                toggleUploadDiv(GVDocOriginalCheckbox, GVDocOriginalUpload);
+            });
+
+            GVCopiaRevisionCheckbox.change(function () {
+                toggleUploadDiv(GVCopiaRevisionCheckbox, GVCopiaRevisionUpload);
+            });
+
+            GVTraspasoCheckbox.change(function () {
+                toggleUploadDiv(GVTraspasoCheckbox, GVTraspasoUpload);
+            });
+
+            GHEscrituraCheckbox.change(function () {
+                toggleUploadDiv(GHEscrituraCheckbox, GHEscrituraUpload);
+            });
+
+            GHAvaluoCheckbox.change(function () {
+                toggleUploadDiv(GHAvaluoCheckbox, GHAvaluoUpload);
+            });
+
+            GHRevisionIPCheckbox.change(function () {
+                toggleUploadDiv(GHRevisionIPCheckbox, GHRevisionIPUpload);
+            });
+
+            $(".form-subir-archivos").submit(function (e) {
+                e.preventDefault(); // Evitar que el formulario se envíe por defecto
+
+                var form = this;
+                var formData = new FormData(form);
+                var successMessage = $(form).find(".guardado-exitoso");
+
+                $.ajax({
+                    url: form.action,
+                    type: form.method,
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        if (response.exitoso) {
+                            successMessage.show();
+                        } else {
+                            
+                        }
+                    },
+                    error: function () {
+                        alert("Ocurrió un error en la solicitud.");
+                    }
+                });
+            });
+
+            $("#editForm").submit(function (e) {
+                e.preventDefault(); // Evitar que el formulario se envíe por defecto
+
+                var form = this;
+                var formData = new FormData(form);
+                var successMessage = $(form).find(".guardado-exitoso"); // Mensaje de éxito del formulario
+
+                $.ajax({
+                    url: form.action,
+                    type: form.method,
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        if (response.exitoso) {
+                            // El formulario se envió exitosamente
+                            // Redirige a la página deseada
+                            window.location.href = response.redirectUrl;
+                        } else {
+                            // La validación falló, muestra el mensaje de error
+                            successMessage.addClass("mensaje-exitoso");
+                            successMessage.text(response.mensaje);
+                            successMessage.show();
+                        }
+                    },
+                    error: function () {
+                        // Manejar errores si es necesario
+                        alert("Ocurrió un error en la solicitud.");
+                    }
+                });
+            });
+        });
+    </script>
 }

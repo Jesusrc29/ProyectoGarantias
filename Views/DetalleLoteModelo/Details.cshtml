@@ -1,126 +1,208 @@
-﻿@model ProyectGarantia.Models.DetalleLoteModelo
+﻿@model ProyectGarantia.Models.ViewModel.DetalleLoteModeloConDocumentos
 
 @{
     ViewData["Title"] = "Details";
 }
 
 <h1>Details</h1>
+<h4>Detalle del Lote</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        
+        <dl class="row">
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.DetalleLoteModelo.Lote)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.DetalleLoteModelo.NumeroCorrelativo)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.DetalleLoteModelo.FechaOtorgada)
+            </dt>
+            <dd class="col-sm-8">
+                @Model.DetalleLoteModelo.FechaOtorgada.ToString("dd/MM/yyyy")
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.DetalleLoteModelo.NombreCliente)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.DetalleLoteModelo.NombreCliente)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.DetalleLoteModelo.CentroCosto)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.DetalleLoteModelo.CentroCosto)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.DetalleLoteModelo.CantidadGarantias)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.DetalleLoteModelo.CantidadGarantias)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.DetalleLoteModelo.GVDocOriginal)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.DetalleLoteModelo.GVDocOriginal)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.DetalleLoteModelo.GVCopiaRevision)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.DetalleLoteModelo.GVCopiaRevision)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.DetalleLoteModelo.GVTraspaso)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.DetalleLoteModelo.GVTraspaso)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.DetalleLoteModelo.GHEscritura)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.DetalleLoteModelo.GHEscritura)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.DetalleLoteModelo.GHAvaluo)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.DetalleLoteModelo.GHAvaluo)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.DetalleLoteModelo.GHRevisionIP)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.DetalleLoteModelo.GHRevisionIP)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-md-6">
+        <dl class="row">
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.DetalleLoteModelo.ValorGarantia)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.DetalleLoteModelo.ValorGarantia)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.DetalleLoteModelo.Contrato)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.DetalleLoteModelo.Contrato)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.DetalleLoteModelo.Pagare)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.DetalleLoteModelo.Pagare)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.DetalleLoteModelo.NumeroCorrelativo)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.DetalleLoteModelo.NumeroCorrelativo)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.DetalleLoteModelo.NombreAsesor)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.DetalleLoteModelo.NombreAsesor)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.DetalleLoteModelo.FechaEnvio)
+            </dt>
+            <dd class="col-sm-8">
+                @Model.DetalleLoteModelo.FechaEnvio.ToString("dd/MM/yyyy")
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.DetalleLoteModelo.NombreCreador)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.DetalleLoteModelo.NombreCreador)
+            </dd>
+        </dl>
+    </div>
+</div>
+<div>
+    <h3>Lista de Garantias</h3>
+    <hr />
+    <table id="documentosTable" class="table table-hover table-bordered table-sm">
+        <thead>
+            <tr class="table-info">
+                <th>Correlativo</th>
+                <th>Descripción Aval</th>
+                <th>Monto</th>
+                <th>Nombre Aval</th>
+                <th>Codigo Barras</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.DetalleLoteModelo.Garantias)
+            {
+                <tr>
+                    <td>
+                        @item.CorrGarantia
+                    </td>
+                    <td>
+                        @item.DescripAval
+                    </td>
+                    <td>
+                        @item.MontoGarantia
+                    </td>
+                    <td>
+                        @item.NombreAval
+                    </td>
+                    <td>
+                        <a asp-controller="DetalleLoteModelo" asp-action="DescargarCodigoBarras" asp-route-correlativo="@item.CorrGarantia">Descargar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+<div>
+    <h3>Lista Documentos</h3>
+    <hr />
+    <table id="documentosTable" class="table table-hover table-bordered table-sm">
+        <thead>
+            <tr class="table-info">
+                <th>Nombre Original</th>
+                <th>Tipo de Documento</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Documentos)
+            {
+                <tr>
+                    <td>
+                        @item.NombreOriginal
+                    </td>
+                    <td>
+                        @item.TipoDocumento
+                    </td>
+                    <td>
+                        <a asp-controller="Documento" asp-action="DescargarDocumento" asp-route-documentoId="@item.DocumentoId">Descargar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
 
 <div>
-    <h4>DetalleLoteModelo</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Lote)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Lote.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaOtorgada)
-        </dt>
-        <dd class = "col-sm-10">
-            @Model.FechaOtorgada.ToString("dd/MM/yyyy")
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NombreCliente)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NombreCliente)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CentroCosto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CentroCosto)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CantidadGarantias)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CantidadGarantias)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GVDocOriginal)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GVDocOriginal)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GVCopiaRevision)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GVCopiaRevision)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GVTraspaso)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GVTraspaso)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GHEscritura)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GHEscritura)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GHAvaluo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GHAvaluo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GHRevisionIP)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GHRevisionIP)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ValorGarantia)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ValorGarantia)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Contrato)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Contrato)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Pagare)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Pagare)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NumeroCorrelativo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NumeroCorrelativo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NombreAsesor)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NombreAsesor)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaEnvio)
-        </dt>
-        <dd class = "col-sm-10">
-            @Model.FechaEnvio.ToString("dd/MM/yyyy")
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NombreCreador)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NombreCreador)
-        </dd>
-    </dl>
+    <a asp-action="Edit" asp-route-loteId="@Model.DetalleLoteModelo.LoteId" asp-route-id="@Model.DetalleLoteModelo.Id">Edit</a> |
+    <a asp-action="Index" asp-route-id="@Model.DetalleLoteModelo?.LoteId">Back to List</a>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+@section Scripts{
+    <script>
+        
+    </script>
+}

@@ -1,18 +1,50 @@
 ﻿@model IEnumerable<ProyectGarantia.Models.Lote>
-@*@using ProyectGarantia.Services.Lote*@
 
 @{
     ViewData["Title"] = "Index";
-    //var informacionServicio = _httpRequest.ObtenerMensaje();
 }
 
 <h1>informacionServicio</h1>
 
 <p>
-    <a class="btn btn-success btn-sm" role="button" asp-action="Create">Create New</a>
-    <a class="btn btn-dark btn-sm" role="button" asp-controller="DetalleLote" asp-action="Index">Crear Préstamos</a>
-    <a class="btn btn-primary btn-sm" role="button" asp-controller="DetalleLoteModelo" asp-action="Index">Modelo Opcional</a>
+    <a class="btn btn-success btn-sm" role="button" asp-action="Create">Crear Lote</a>
 </p>
+
+<div class="pb-3">
+    <form asp-controller="Lote" asp-action="GenerarReporte" method="get">
+        <h3>Reportes</h3>
+        <div class="row">
+            <div class="col">
+                <label>Fecha Inicio</label>
+                <input type="date" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")" aria-label="Reportes" aria-describedby="basic-addon2" name="fechaInicio">
+            </div>
+            <div class="col">
+                <label>Fecha Fin</label>
+                <input type="date" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")" aria-label="Reportes" aria-describedby="basic-addon2" name="fechaFin">
+            </div>
+            <div class="col">
+                <label>Estado</label>
+                <select class="form-select" name="estado">
+                    <option selected value="Todos">Todos</option>
+                    <option value="Enviado">Enviado</option>
+                    <option value="EnCurso">En curso</option>
+                    <option value="Recibido">Recibido</option>
+                    <option value="Aprobado">Aprobado</option>
+                    <option value="Rechazado">Rechazado</option>
+                </select>
+            </div>
+            <div class="col">
+                <button class="btn btn-outline-secondary mt-4" type="submit" name="formato" value="PDF">
+                    Generar PDF
+                </button>
+                <button class="btn btn-outline-secondary mt-4" type="submit" name="formato" value="Excel">
+                    Generar Excel
+                </button>
+            </div>
+        </div>
+
+    </form>
+</div>
 
 <table class="table table-hover table-bordered table-sm">
     <thead class="table-success">
@@ -29,11 +61,13 @@
             <th>
                 @Html.DisplayNameFor(model => model.NombreCreador)
             </th>
-            <th></th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @if (Model != null)
+    {   
+        foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.NumeroCorrelativo)
@@ -47,12 +81,103 @@
             <td>
                 @Html.DisplayFor(modelItem => item.NombreCreador)
             </td>
-            <td>
-                    <a class="btn btn-warning btn-sm" role="button"  asp-action="Edit" asp-route-id="@item.Id">Editar</a>
-                    <a class="btn btn-info btn-sm" role="button" asp-action="Details" asp-route-id="@item.Id">Details</a> 
+                <td>
+
+                        <a class="btn btn-primary btn-sm" role="button" asp-action="Enviar" asp-route-id="@item.Id">Enviar</a>
+                        <a class="btn btn-secondary btn-sm" role="button" asp-action="EnFirma" asp-route-id="@item.Id">En Firma</a>
+                        <a class="btn btn-warning btn-sm" role="button" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    
+                    @Html.ActionLink("Ver Lote", "Details", "Lote", new { id= item.Id, page =1} , new {@class ="btn btn-info btn-sm"})
                     <a class="btn btn-danger btn-sm" role="button" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
+
+                    
+                         <button type="button" class="btn btn-success btn-sm btn-aprobar" data-id="@item.Id">
+                                Aprobar Lote
+                            </button>
+
+                            <div class="modal fade" id="contrasenaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Ingresar Contraseña</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                        <form id="formAprobarLote" asp-controller="Lote" asp-action="VerificarContrasenaAdmin" method="get">
+                                                <input type="hidden" name="id" value="@item.Id" />
+                                                <label for="password">Contraseña:</label>
+                                                <input type="password" name="password" />
+                                                <input type="submit" class="btn btn-primary" value="Aprobar Lote">
+                                        </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                                          
         </tr>
 }
+        }
     </tbody>
 </table>
+
+ @section scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+                
+    <script>
+
+        $(function () {
+            $('.btn-aprobar').on('click', function () {
+                var loteId = $(this).data("id");
+                $.ajax({
+                    url: '/Lote/AprobarLote?id=' + loteId + '&isAjax=true',
+
+                    type: 'GET',
+                    success: function (result) {
+                        if (result.success) {
+                            
+                            if (result.requirePassword) {
+                                $('#contrasenaModal').modal('show');
+                            } else {
+                                alert("Aprobación exitosa");
+                                window.location.href = result.redirectUrl;
+                                
+                            }
+                        } else {
+                            alert("Error al aprobar el lote");
+                        }
+                    },
+                    error: function (error) {
+                        alert("Error al procesar la solicitud");
+                    }
+                });
+            });
+        });
+        $(document).ready(function () {
+            $('#formAprobarLote').submit(function (e) {
+                e.preventDefault(); 
+                var formData = $(this).serialize(); 
+                console.log(formData);
+                $.ajax({
+                    type: 'GET',
+                    url: '/Lote/VerificarContrasenaAdmin',
+                    data: formData,
+                    success: function (result) {
+                        if (result) {
+                            location.reload(true);
+                            alert('Aprobación exitosa');
+                        } else {
+                            alert('No se encontró el usuario.');
+                        }
+                    },
+                    error: function () {
+                        alert('Error en la llamada AJAX.');
+                    }
+                });
+            });
+        });
+    </script> 
+} 
+ 
+

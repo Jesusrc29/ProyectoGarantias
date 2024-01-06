@@ -1,36 +1,34 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.AspNetCore.Identity;
+using Newtonsoft.Json;
+using NuGet.Protocol.Core.Types;
+using ProyectGarantia.Data;
 using ProyectGarantia.Models;
 using System;
+using static ProyectGarantia.Data.ApplicationDbContext;
 
 namespace ProyectGarantia.Services
 {
     public class HTTPRequestImpl : IHTTPRequest
     {
+        public async Task<List<DatosLoteGarantiasResponse>> ObtenerMensajeAsync(String CodAgencia, DateTime FechaDesde, DateTime FechaHasta)
 
-        public async Task<string> ObtenerMensajeAsync()
         {
+
             HttpClient _client;
             try
             {
-
+                
                 _client = PreparedClient();
-                string apiUrl = "https://190.99.17.152:10887/Api/Datoslotegarantias?Fchdesde=01/08/2023&Fchhasta=31/08/2023&Agencia=0125";
-                //string apiUrl = "https://jsonplaceholder.typicode.com/users";
+                string apiUrl = $"https://190.4.17.10:1089/Api/Datoslotegarantias?Fchdesde={FechaDesde:dd/MM/yyyy}&Fchhasta={FechaHasta:dd/MM/yyyy}&Agencia={CodAgencia}";
+                
                 HttpResponseMessage response = await _client.GetAsync(apiUrl);
 
 
                 if (response.IsSuccessStatusCode)
                 {
-                    string content = await response.Content.ReadAsStringAsync();
-
-                    // Deserializar la respuesta en un objeto
-                    //DatosLoteGarantiasResponse objeto = JsonConvert.DeserializeObject<DatosLoteGarantiasResponse>(content);
-
-                    // Aquí puedes trabajar con el objeto si es necesario
-
-                    // Serializar el objeto de nuevo a JSON
-                    //string jsonString = JsonConvert.SerializeObject(objeto, Formatting.Indented);
-                    return content;
+                    string json = await response.Content.ReadAsStringAsync();
+                    List<DatosLoteGarantiasResponse> prestamos = JsonConvert.DeserializeObject<List<DatosLoteGarantiasResponse>>(json);
+                    return prestamos;
 
                 }
                 else

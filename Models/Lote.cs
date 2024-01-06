@@ -22,7 +22,11 @@ namespace ProyectGarantia.Models
         [Column("NombreCreador")]
         public string NombreCreador { get; set; }
 
-        public List<DetalleLote>? DetallesLote { get; set; }
+        [Column("FechaDesde", TypeName = "Date")]
+        public DateTime FechaDesde { get; set; }
+        [Column("FechaHasta", TypeName = "Date")]
+        public DateTime FechaHasta { get; set; }
+        public List<DetalleLoteModelo>? DetallePrestamo { get; set; }
     }
 
     public enum EstadoLote
@@ -31,6 +35,7 @@ namespace ProyectGarantia.Models
         EnCurso,
         Recibido,
         Aprobado,
-        Rechazado
+        Rechazado,
+        EnFirma
     }
 }

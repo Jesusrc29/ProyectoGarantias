@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BarcodeLib" Version="2.4.0" />
+    <PackageReference Include="ClosedXML" Version="0.102.1" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.3" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.14" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.21" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.21" />
@@ -29,6 +32,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\archivos\documentos\" />
+    <Folder Include="wwwroot\archivos\codigoBarras\" />
     <Folder Include="wwwroot\img\" />
     <Folder Include="Data\Migrations\" />
   </ItemGroup>

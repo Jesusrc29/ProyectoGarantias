@@ -376,7 +376,7 @@ namespace ProyectGarantia.Migrations
 
                     b.HasIndex("LoteId");
 
-                    b.ToTable("DetallesLote");
+                    b.ToTable("DetalleLote");
                 });
 
             modelBuilder.Entity("ProyectGarantia.Models.DetalleLoteModelo", b =>
@@ -399,6 +399,10 @@ namespace ProyectGarantia.Migrations
                     b.Property<bool>("Contrato")
                         .HasColumnType("boolean")
                         .HasColumnName("Contrato");
+
+                    b.Property<int>("Estado")
+                        .HasColumnType("integer")
+                        .HasColumnName("Estado");
 
                     b.Property<DateOnly>("FechaEnvio")
                         .HasColumnType("date")
@@ -450,6 +454,18 @@ namespace ProyectGarantia.Migrations
                         .HasColumnType("text")
                         .HasColumnName("NombreCreador");
 
+                    b.Property<string>("NumContrato")
+                        .HasColumnType("text")
+                        .HasColumnName("NumContrato");
+
+                    b.Property<string>("NumPagare")
+                        .HasColumnType("text")
+                        .HasColumnName("NumPagare");
+
+                    b.Property<string>("NumPrestamo")
+                        .HasColumnType("text")
+                        .HasColumnName("NumPrestamo");
+
                     b.Property<string>("NumeroCorrelativo")
                         .IsRequired()
                         .HasColumnType("text")
@@ -494,6 +510,48 @@ namespace ProyectGarantia.Migrations
                     b.ToTable("Documentaciones");
                 });
 
+            modelBuilder.Entity("ProyectGarantia.Models.Documento", b =>
+                {
+                    b.Property<int>("DocumentoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("Id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("DocumentoId"));
+
+                    b.Property<int>("DetalleLoteModeloId")
+                        .HasColumnType("integer")
+                        .HasColumnName("DetalleLoteModeloId");
+
+                    b.Property<int?>("Id")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("NombreDocumento")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("NombreDocumento");
+
+                    b.Property<string>("NombreOriginal")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("NombreOriginal");
+
+                    b.Property<string>("TipoDocumento")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("TipoDocumento");
+
+                    b.HasKey("DocumentoId");
+
+                    b.HasIndex("Id");
+
+                    b.ToTable("Documento", t =>
+                        {
+                            t.Property("Id")
+                                .HasColumnName("Id1");
+                        });
+                });
+
             modelBuilder.Entity("ProyectGarantia.Models.Garantia", b =>
                 {
                     b.Property<int>("Id")
@@ -503,27 +561,38 @@ namespace ProyectGarantia.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AlmacenId")
-                        .HasColumnType("integer")
-                        .HasColumnName("AlmacenId");
+                    b.Property<string>("CorrGarantia")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("CorrGarantia");
 
-                    b.Property<int>("DetalleLoteId")
-                        .HasColumnType("integer")
-                        .HasColumnName("DetalleLoteId");
+                    b.Property<string>("DescripAval")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("DescripAval");
+
+                    b.Property<int>("DetalleLoteModeloId")
+                        .HasColumnType("integer");
 
                     b.Property<int>("Estado")
                         .HasColumnType("integer")
                         .HasColumnName("Estado");
 
-                    b.Property<int>("Tipo")
-                        .HasColumnType("integer")
-                        .HasColumnName("Tipo");
+                    b.Property<double>("MontoGarantia")
+                        .HasColumnType("double precision")
+                        .HasColumnName("MontoGarantia");
+
+                    b.Property<string>("NombreAval")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("NombreAval");
+
+                    b.Property<int>("PrestamoId")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AlmacenId");
-
-                    b.HasIndex("DetalleLoteId");
+                    b.HasIndex("DetalleLoteModeloId");
 
                     b.ToTable("Garantias");
                 });
@@ -544,6 +613,14 @@ namespace ProyectGarantia.Migrations
                     b.Property<DateOnly>("FechaCreacion")
                         .HasColumnType("date")
                         .HasColumnName("FechaCreacion");
+
+                    b.Property<DateTime>("FechaDesde")
+                        .HasColumnType("Date")
+                        .HasColumnName("FechaDesde");
+
+                    b.Property<DateTime>("FechaHasta")
+                        .HasColumnType("Date")
+                        .HasColumnName("FechaHasta");
 
                     b.Property<string>("NombreCreador")
                         .IsRequired()
@@ -637,7 +714,7 @@ namespace ProyectGarantia.Migrations
                         .IsRequired();
 
                     b.HasOne("ProyectGarantia.Models.Lote", "Lote")
-                        .WithMany("DetallesLote")
+                        .WithMany()
                         .HasForeignKey("LoteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -652,7 +729,7 @@ namespace ProyectGarantia.Migrations
             modelBuilder.Entity("ProyectGarantia.Models.DetalleLoteModelo", b =>
                 {
                     b.HasOne("ProyectGarantia.Models.Lote", "Lote")
-                        .WithMany()
+                        .WithMany("DetallePrestamo")
                         .HasForeignKey("LoteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -663,7 +740,7 @@ namespace ProyectGarantia.Migrations
             modelBuilder.Entity("ProyectGarantia.Models.Documentacion", b =>
                 {
                     b.HasOne("ProyectGarantia.Models.DetalleLote", "DetalleLote")
-                        .WithMany("Documentos")
+                        .WithMany()
                         .HasForeignKey("DetalleLoteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -671,23 +748,24 @@ namespace ProyectGarantia.Migrations
                     b.Navigation("DetalleLote");
                 });
 
+            modelBuilder.Entity("ProyectGarantia.Models.Documento", b =>
+                {
+                    b.HasOne("ProyectGarantia.Models.DetalleLoteModelo", "DetalleLoteModelo")
+                        .WithMany()
+                        .HasForeignKey("Id");
+
+                    b.Navigation("DetalleLoteModelo");
+                });
+
             modelBuilder.Entity("ProyectGarantia.Models.Garantia", b =>
                 {
-                    b.HasOne("ProyectGarantia.Models.Almacen", "Almacen")
+                    b.HasOne("ProyectGarantia.Models.DetalleLoteModelo", "DetalleLoteModelo")
                         .WithMany("Garantias")
-                        .HasForeignKey("AlmacenId")
+                        .HasForeignKey("DetalleLoteModeloId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProyectGarantia.Models.DetalleLote", "DetalleLote")
-                        .WithMany("Garantias")
-                        .HasForeignKey("DetalleLoteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Almacen");
-
-                    b.Navigation("DetalleLote");
+                    b.Navigation("DetalleLoteModelo");
                 });
 
             modelBuilder.Entity("ProyectGarantia.Models.Agencia", b =>
@@ -695,26 +773,19 @@ namespace ProyectGarantia.Migrations
                     b.Navigation("DetallesLote");
                 });
 
-            modelBuilder.Entity("ProyectGarantia.Models.Almacen", b =>
-                {
-                    b.Navigation("Garantias");
-                });
-
             modelBuilder.Entity("ProyectGarantia.Models.Cliente", b =>
                 {
                     b.Navigation("DetallesLote");
                 });
 
-            modelBuilder.Entity("ProyectGarantia.Models.DetalleLote", b =>
+            modelBuilder.Entity("ProyectGarantia.Models.DetalleLoteModelo", b =>
                 {
-                    b.Navigation("Documentos");
-
                     b.Navigation("Garantias");
                 });
 
             modelBuilder.Entity("ProyectGarantia.Models.Lote", b =>
                 {
-                    b.Navigation("DetallesLote");
+                    b.Navigation("DetallePrestamo");
                 });
 #pragma warning restore 612, 618
         }

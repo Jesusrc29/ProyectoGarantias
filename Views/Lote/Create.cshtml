@@ -26,7 +26,6 @@
             </div>
             <div class="form-group">
                 <label asp-for="Estado" class="control-label"></label>
-                @* <select asp-for="Estado" class="form-control" asp-items="Html.GetEnumSelectList<EstadoLote>()"></select> *@
                 <select class="form-control" disabled>
                     <option selected>@Enum.GetName(typeof(EstadoLote), 0)</option>
                 </select>
@@ -35,11 +34,11 @@
             <h4>Rango de Fechas de Lote</h4>
             <div class="form-group">
                 <label class="control-label">Fecha Desde</label>
-                <input class="form-control" type="date"/>
+                <input asp-for="FechaDesde" class="form-control" type="date" />
             </div>
             <div class="form-group">
                 <label class="control-label">Fecha Hasta</label>
-                <input class="form-control" type="date" />
+                <input asp-for="FechaHasta" class="form-control" type="date" />
             </div>
             <div class="form-group">
                 <label asp-for="FechaCreacion" class="control-label"></label>

@@ -1,42 +1,132 @@
-﻿@model ProyectGarantia.Models.Lote
+﻿@* @model ProyectGarantia.Models.DetalleLote *@
+
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@model IEnumerable<ProyectGarantia.Models.DetalleLoteModelo>
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalle del Lote";
 }
 
-<h1>Details</h1>
+<h1>Listado de Préstamos</h1>
 
 <div>
     <h4>Lote</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NumeroCorrelativo)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lote)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NumeroCorrelativo)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstOrDefault().Lote.NumeroCorrelativo)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Estado)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lote.Estado)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Estado)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstOrDefault().Lote.Estado)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaCreacion)
+        <dt class="col-sm-2">
+            Fecha Creación
         </dt>
-        <dd class = "col-sm-10">
-            @Model.FechaCreacion.ToString("dd/MM/yyyy")
+        <dd class="col-sm-10">
+            @Model.FirstOrDefault().Lote.FechaCreacion.ToString("dd/MM/yyyy")
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NombreCreador)
+        <dt class="col-sm-2">
+            Creador
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NombreCreador)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstOrDefault().Lote.NombreCreador)
+        </dd>
+        <dt class="col-sm-2">
+            Agencia
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstOrDefault().CentroCosto)
+        </dd>
+        <dt class="col-sm-2">
+            Fecha Envio
+        </dt>
+        <dd class="col-sm-10">
+            @Model.FirstOrDefault().FechaEnvio.ToString("dd/MM/yyyy")
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="row">
+    <div class="col-6">
+        <form asp-controller="Lote" asp-action="Details" method="get">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Busqueda" aria-label="Buscar" aria-describedby="basic-addon2" name="buscar">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        <i class="material-symbols-outlined">
+                            search
+                        </i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
+<table class="table table-hover table-bordered table-sm">
+    <thead>
+        <tr class="table-info">
+            <th>
+                Fecha Otorgada
+            </th>
+            <th>
+                Cliente
+            </th>
+            <th>
+                N° Garantías
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorGarantia)
+            </th>
+            <th>
+                Oficial
+            </th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.FechaOtorgada.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreCliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CantidadGarantias)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValorGarantia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreAsesor)
+                </td>
+                <td>
+                    <a class="btn btn-dark btn-sm" role="button" asp-route-id="@Model?.FirstOrDefault()" asp-controller="DetalleLoteModelo" asp-action="Edit">Edit</a>
+                    <a asp-action="Edit" asp-route-id="@item?.Id">Edit</a> |
+
+
+                    @* <a asp-action="Edit"  asp-controller="DetalleLoteModelo">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> *@
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        @Html.PagedListPager((IPagedList)Model,
+        page=>Url.Action("Index",
+        "DetalleLoteModelo",new{page=page}),X.PagedList.Web.Common.PagedListRenderOptions.MinimalWithItemCountText)
+    </tfoot>
+</table>
+@* <div>
+    <a asp-action="Edit" asp-route-id="@Model?.FirstOrDefault().Id">Edit</a>
+    <a asp-action="Index">Back to List</a>
+</div> *@

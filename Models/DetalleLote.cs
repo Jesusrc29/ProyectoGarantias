@@ -3,9 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ProyectGarantia.Models
 {
-    [Table("DetallesLote")]
     public class DetalleLote
     {
+
         [Key]
         [Column("Id")]
         public int Id { get; set; }
@@ -37,8 +37,7 @@ namespace ProyectGarantia.Models
         [Column("CantidadGarantias")]
         public int CantidadGarantias { get; set; }
 
-        public List<Garantia> Garantias { get; set; }
-        public List<Documentacion> Documentos { get; set; }
+
     }
 
 }

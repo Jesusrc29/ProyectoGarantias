@@ -35,9 +35,13 @@ namespace ProyectGarantia.Models
             public decimal ValorGarantia { get; set; }
             [Column("Contrato")]
             public bool Contrato { get; set; }
-            [Column("Pagare")]
+        [Column("NumContrato")]
+        public string? NumContrato { get; set; }
+        [Column("Pagare")]
             public bool Pagare { get; set; }
-            [Column("NumeroCorrelativo")]
+        [Column("NumPagare")]
+        public string? NumPagare { get; set; }
+        [Column("NumeroCorrelativo")]
             public string NumeroCorrelativo { get; set; }
             [Column("NombreAsesor")]
             public string NombreAsesor { get; set; }
@@ -45,6 +49,20 @@ namespace ProyectGarantia.Models
         public DateOnly FechaEnvio { get; set; }
         [Column("NombreCreador")]
             public string NombreCreador { get; set; }
-        
+        [Column("NumPrestamo")]
+        public string? NumPrestamo { get; set; }
+        [Column("Estado")]
+        public EstadoPrestamo Estado { get; set; }
+
+
+        public enum EstadoPrestamo
+        {
+            Creado,
+            Aprobado,
+            Rechazado
+        }
+
+
+        public List<Garantia> Garantias { get; set; }
     }
 }

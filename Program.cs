@@ -11,22 +11,33 @@ using static ProyectGarantia.Data.ApplicationDbContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<Usuario>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IDADetalleLoteModelo, DADetalleLoteModelo>();
 builder.Services.AddScoped<IDALote, DALote>();
+builder.Services.AddScoped<IDAAgencia, DAAgencia>();
+builder.Services.AddScoped<IDADocumento, DADocumento>();
+builder.Services.AddScoped<IDAGarantia, DAGarantia>();
 builder.Services.AddScoped<IHTTPRequest, HTTPRequestImpl>();
+
+builder.Services.AddAuthorization(
+    options => options.AddPolicy(
+        "AllowLayoutOperador",
+        policy => policy.RequireRole("Operador")));
+builder.Services.AddAuthorization(
+    options => options.AddPolicy(
+        "AllowLayoutSupervisora",
+        policy => policy.RequireRole("Supervisora")));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
@@ -34,7 +45,6 @@ if (app.Environment.IsDevelopment())
 else
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 

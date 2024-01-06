@@ -40,33 +40,12 @@ namespace ProyectGarantia.Data
                 entityTypeBuilder.Property(u => u.AgenciaId)
                     .HasMaxLength(10); 
 
-                // Configura la relación con agencia
-                    
-
                 entityTypeBuilder.HasOne(u => u.Agencia)
                     .WithMany()
                     .HasForeignKey(u => u.AgenciaId)
                     .IsRequired();
             });
         }
-        //protected override void OnModelCreating(ModelBuilder builder)
-        //{
-        //    base.OnModelCreating(builder);
-        //    builder.Entity<Usuario>(entityTypeBuilder =>
-        //    {
-        //        entityTypeBuilder.ToTable("AspNetUsers");
-        //        entityTypeBuilder.Property(u => u.UserName)
-        //        .HasMaxLength(100)
-        //        .HasDefaultValue(0);
-        //        entityTypeBuilder.Property(u => u.Nombres)
-        //        .HasMaxLength(60);
-        //        entityTypeBuilder.Property(u => u.Apellidos)
-        //        .HasMaxLength(60);
-        //     entityTypeBuilder.Property(u => u.CodAgencia)
-        //        .HasMaxLength(5);
-        //    }
-        //    );
-        //}
 
         private void entityTypeBuilder(EntityTypeBuilder<Usuario> obj)
         {
@@ -87,5 +66,6 @@ namespace ProyectGarantia.Data
         public virtual DbSet<ProyectGarantia.Models.Documentacion> Documentacion { get; set; }
         public virtual DbSet<ProyectGarantia.Models.Garantia> Garantia { get; set; }
         public virtual DbSet<ProyectGarantia.Models.Almacen> Almacen { get; set; }
+        public virtual DbSet<ProyectGarantia.Models.Documento> Documento { get; set; }
     }
 }

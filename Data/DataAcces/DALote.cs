@@ -22,6 +22,12 @@ namespace ProyectGarantia.Data.Data_Acces
             }
             return listadoLote;
         }
+
+        public IEnumerable<Lote> GetLoteByEstado(EstadoLote estado)
+        {
+            return dbLote.Lote.Where(lote => lote.Estado == estado).ToList();
+        }
+
         public int InsertLote(Lote Lote)
         {
             dbLote.Add(Lote);

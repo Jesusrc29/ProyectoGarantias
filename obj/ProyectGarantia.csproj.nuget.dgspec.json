@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\ProyectGarantia.csproj": {}
+    "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\ProyectGarantia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\ProyectGarantia.csproj": {
+    "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\ProyectGarantia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\ProyectGarantia.csproj",
+        "projectUniqueName": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\ProyectGarantia.csproj",
         "projectName": "ProyectGarantia",
-        "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\ProyectGarantia.csproj",
+        "projectPath": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\ProyectGarantia.csproj",
         "packagesPath": "C:\\Users\\jesus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\obj\\",
+        "outputPath": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,6 +45,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "BarcodeLib": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.102.1, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.14, )"
@@ -96,6 +104,10 @@
             "X.PagedList.Mvc.Core": {
               "target": "Package",
               "version": "[8.4.7, )"
+            },
+            "iTextSharp": {
+              "target": "Package",
+              "version": "[5.5.13.3, )"
             }
           },
           "imports": [

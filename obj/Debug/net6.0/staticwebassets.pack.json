@@ -1,255 +1,767 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ProyectGarantia.bundle.scp.css",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ProyectGarantia.bundle.scp.css",
       "PackagePath": "staticwebassets\\ProyectGarantia.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\css\\site.css",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\G000053882.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\G000053882.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\G000053902.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\G000053902.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\G000054243.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\G000054243.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106070720231959521.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106070720231959521.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106100720231357531.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106100720231357531.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106110720231533111.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106110720231533111.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106120720231014301.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106120720231014301.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106120720231014302.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106120720231014302.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106120720231124541.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106120720231124541.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106120720231124542.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106120720231124542.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106120720231142591.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106120720231142591.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP010612072023938541.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP010612072023938541.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP010612072023939301.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP010612072023939301.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP010613072023929201.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP010613072023929201.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106140720231026081.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106140720231026081.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106180720231153121.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106180720231153121.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106180720231153123.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106180720231153123.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106190720231011571.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106190720231011571.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106190720231011572.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106190720231011572.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106190720231038541.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106190720231038541.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106190720231038542.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106190720231038542.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106200720231100421.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106200720231100421.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106200720231130461.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106200720231130461.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106200720231944461.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106200720231944461.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP010622072023932561.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP010622072023932561.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP010622072023932562.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP010622072023932562.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106240720231350011.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106240720231350011.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106250720231152561.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106250720231152561.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106250720231308311.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106250720231308311.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106250720231413161.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106250720231413161.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106250720231530471.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106250720231530471.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106250720232300041.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106250720232300041.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106250720232300042.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106250720232300042.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106260720231334261.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106260720231334261.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106260720231533451.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106260720231533451.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106270720231453081.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106270720231453081.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106280720231415391.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106280720231415391.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP0106310720231151221.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP0106310720231151221.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\codigoBarras\\GP011917082023950452.png",
+      "PackagePath": "staticwebassets\\archivos\\codigoBarras\\GP011917082023950452.png"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\archivos\\documentos\\7dcb190b-11b4-4ea2-bbaf-6e1af615f717.jpg",
+      "PackagePath": "staticwebassets\\archivos\\documentos\\7dcb190b-11b4-4ea2-bbaf-6e1af615f717.jpg"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\favicon.ico",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\img\\IDH HORIZONTAL.png",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\img\\IDH HORIZONTAL.png",
       "PackagePath": "staticwebassets\\img\\IDH HORIZONTAL.png"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\img\\IDH VERTICAL.png",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\img\\IDH VERTICAL.png",
       "PackagePath": "staticwebassets\\img\\IDH VERTICAL.png"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\js\\site.js",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\aes-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\aes-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\aes.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\aes.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\cipher-core-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\cipher-core-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\cipher-core.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\cipher-core.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\core-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\core-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\core.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\core.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\enc-base64-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\enc-base64-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\enc-base64.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\enc-base64.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\enc-utf16-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\enc-utf16-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\enc-utf16.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\enc-utf16.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\evpkdf-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\evpkdf-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\evpkdf.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\evpkdf.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\format-hex-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\format-hex-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\format-hex.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\format-hex.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\hmac-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\hmac-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\hmac.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\hmac.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\lib-typedarrays-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\lib-typedarrays-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\lib-typedarrays.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\lib-typedarrays.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\md5-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\md5-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\md5.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\md5.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\mode-cfb-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\mode-cfb-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\mode-cfb.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\mode-cfb.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\mode-ctr-gladman-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\mode-ctr-gladman-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\mode-ctr-gladman.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\mode-ctr-gladman.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\mode-ctr-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\mode-ctr-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\mode-ctr.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\mode-ctr.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\mode-ecb-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\mode-ecb-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\mode-ecb.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\mode-ecb.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\mode-ofb-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\mode-ofb-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\mode-ofb.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\mode-ofb.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\pad-ansix923-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\pad-ansix923-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\pad-ansix923.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\pad-ansix923.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\pad-iso10126-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\pad-iso10126-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\pad-iso10126.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\pad-iso10126.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\pad-iso97971-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\pad-iso97971-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\pad-iso97971.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\pad-iso97971.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\pad-nopadding-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\pad-nopadding-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\pad-nopadding.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\pad-nopadding.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\pad-zeropadding-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\pad-zeropadding-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\pad-zeropadding.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\pad-zeropadding.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\pbkdf2-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\pbkdf2-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\pbkdf2.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\pbkdf2.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\rabbit-legacy-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\rabbit-legacy-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\rabbit-legacy.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\rabbit-legacy.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\rabbit-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\rabbit-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\rabbit.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\rabbit.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\rc4-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\rc4-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\rc4.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\rc4.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\ripemd160-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\ripemd160-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\ripemd160.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\ripemd160.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\sha1-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\sha1-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\sha1.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\sha1.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\sha224-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\sha224-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\sha224.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\sha224.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\sha256-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\sha256-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\sha256.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\sha256.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\sha3-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\sha3-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\sha3.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\sha3.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\sha384-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\sha384-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\sha384.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\sha384.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\sha512-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\sha512-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\sha512.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\sha512.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\tripledes-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\tripledes-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\tripledes.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\tripledes.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\x64-core-min.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\x64-core-min.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\components\\x64-core.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\components\\x64-core.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\aes.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\aes.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\hmac-md5.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\hmac-md5.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\hmac-ripemd160.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\hmac-ripemd160.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\hmac-sha1.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\hmac-sha1.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\hmac-sha224.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\hmac-sha224.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\hmac-sha256.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\hmac-sha256.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\hmac-sha3.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\hmac-sha3.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\hmac-sha384.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\hmac-sha384.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\hmac-sha512.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\hmac-sha512.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\md5.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\md5.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\pbkdf2.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\pbkdf2.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\rabbit-legacy.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\rabbit-legacy.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\rabbit.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\rabbit.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\rc4.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\rc4.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\ripemd160.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\ripemd160.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\sha1.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\sha1.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\sha224.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\sha224.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\sha256.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\sha256.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\sha3.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\sha3.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\sha384.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\sha384.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\sha512.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\sha512.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\crypto-js-latest\\dist\\tripledes.js",
+      "PackagePath": "staticwebassets\\js\\crypto-js-latest\\dist\\tripledes.js"
+    },
+    {
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\ProyectoGarantias\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\PC Docs\\Proyecto hecho\\ProyectoGarantias-3era parte\\ProyectoGarantias\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

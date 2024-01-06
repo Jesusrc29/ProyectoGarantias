@@ -1,0 +1,445 @@
+﻿@model ProyectGarantia.Models.DetalleLoteModelo
+
+@{
+    ViewData["Title"] = "Index";
+    //var informacionServicio = _httpRequest.ObtenerMensaje();
+}
+
+<h1>Generar Documentación</h1>
+@*<div>
+    <h3>Seleccionar Prestamo</h3>
+    <form>
+        <div class="row">
+            <div class="col-6">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Buscar prestamo" aria-label="Prestamo" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>*@
+<h4>Detalle del prestamo</h4>
+<div>
+    <dl class="row">
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Lote)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.NumeroCorrelativo)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.FechaOtorgada)
+        </dt>
+        <dd class="col-sm-8">
+            @Model.FechaOtorgada.ToString("dd/MM/yyyy")
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.NombreCliente)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.NombreCliente)
+        </dd>
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.CentroCosto)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.CentroCosto)
+        </dd>
+
+    </dl>
+    <hr />
+
+    <div class="row">
+        <h4>Tipo de documentación</h4>
+        <div class="col-5">
+            <label for="secciones">Selecciona el siguiente tipo de documento a generar:</label>
+            <select id="secciones" class="form-control">
+                <option value="seccion1">Salida por préstamos de documentos</option>
+                <option value="seccion2">Salida por cambio de garantía</option>
+                <option value="seccion3">Ingreso por cambio de garantía</option>
+                <option value="seccion4">Baja por cancelación de préstamo</option>
+            </select>
+        </div>
+    </div>
+    <hr />
+    @if (Model.Garantias.Count > 0)
+    {
+        <h4>Garantías Disponibles</h4>
+        <div class="row">
+            <div class="col-6">
+                <label for="garantias">Selecciona las garantías para generar la documentación:</label>
+                <select id="garantias" class="form-control">
+                    <option value="0">Seleccione una opción</option>
+                    @foreach (var item in Model.Garantias)
+                    {
+                        <option value="@item.Id">@item.NombreAval</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+    }
+    else
+    {
+        <h4>No hay garantías disponibles</h4>
+    }
+    <br />
+    <div id="formularioGarantia" style="display:none;">
+        <h4>Formulario de Garantía</h4>
+        <form id="garantiaForm">
+            <label for="comentario">Comentario:</label>
+            <input type="text" id="comentario" name="comentario" class="form-control" />
+            <div id="formularioCambioGarantia" style="display:none;">
+                <label for="comentario">Descripción:</label>
+                <input type="text" id="descripcion" name="Descripcion" class="form-control" />
+                <label for="comentario">Garantía que entra:</label>
+                <input type="text" id="nombre" name="Nombre" class="form-control" />
+                <label for="comentario">Valor:</label>
+                <input type="text" id="valor" name="Valor" class="form-control" />
+            </div>
+            <br />
+            <button type="button" class="btn btn-primary" onclick="agregarGarantia()">Agregar</button>
+        </form>
+    </div>
+
+</div>
+<hr />
+<div>
+    <h4>Garantías Seleccionadas</h4>
+    <div class="row">
+        <div class="col-6">
+            <table id="tablaGarantias" class="table table-hover table-bordered table-sm">
+                <thead>
+                    <tr class="table-info">
+                        <th>
+                            Nombre
+                        </th>
+                        <th>
+                            Agencia
+                        </th>
+                        <th>
+                            Contrato
+                        </th>
+                        <th>
+                            Comentario
+                        </th>
+                        <th>Acciones</th>
+                        <th style="display:none;">Código</th>
+                        <th style="display:none;">Descripcion</th>
+                        <th style="display:none;">Nombre</th>
+                        <th style="display:none;">Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-8">
+        <div id="seccion1" class="seccion">
+            <h4>Salida por préstamos de documentos</h4>
+            <form id="seccion1form" asp-controller="Documentacion" asp-action="SalidaPrestamo" method="post">
+                <div class="form-group">
+                    <label>A quien se presta</label>
+                    <input class="form-control" name="AQuienSePresta" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="row">
+                    
+                    @*<div class="form-group col-6">
+                        <label>Fecha del prestamo</label>
+                        <input class="form-control" type="date" name="FechaPrestamo" />
+                        <span class="text-danger"></span>
+                    </div>*@
+                </div>
+                <div class="form-group">
+                    <label>Motivo prestamo</label>
+                    <input class="form-control" name="MotivoPrestamo" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label>Quien entrega</label>
+                    <input class="form-control" name="QuienEntrega" />
+                    <span class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" onclick="prepararEnvio('seccion1form', 'seccion1')">Generar</button>
+
+                </div>
+
+            </form>
+        </div>
+
+        <div id="seccion2" class="seccion">
+            <h4>Salida por cambio de garantía</h4>
+            <form id="seccion2form" asp-controller="Documentacion" asp-action="SalidaCambioGarantia" method="post">
+                <div class="form-group">
+                    <label>Quien autoriza el cambio</label>
+                    <input class="form-control" name="AutorizaCambio" />
+                    <span class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+                    <label>Fecha de cambio</label>
+                    <input class="form-control" name="FechaCambio" type="date" />
+                    <span class="text-danger"></span>
+                </div>*@
+                <br />
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" onclick="prepararEnvio('seccion2form', 'seccion2')">Generar</button>
+                </div>
+
+            </form>
+        </div>
+
+        <div id="seccion3" class="seccion">
+            <h4>Ingreso por cambio de garantía</h4>
+            <form id="seccion3form" asp-controller="Documentacion" asp-action="IngresoCambioGarantia" method="post">
+                <div class="form-group">
+                    <label>Quien autoriza el cambio</label>
+                    <input class="form-control" name="AutorizaCambio" />
+                    <span class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+                    <label>Fecha de cambio</label>
+                    <input class="form-control" name="FechaCambio" type="date" />
+                    <span class="text-danger"></span>
+                </div>*@
+                <br />
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" onclick="prepararEnvio('seccion3form', 'seccion3')">Generar</button>
+                </div>
+
+            </form>
+        </div>
+
+        <div id="seccion4" class="seccion">
+            <h4>Baja por cancelación de prestamo</h4>
+            <form id="seccion4form" asp-controller="Documentacion" asp-action="CancelaciónPrestamo" method="post">
+                <div class="form-group">
+                    <label>Prestamo que se cancela</label>
+                    <input class="form-control" name="AutorizaCambio" />
+                    <span class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+                    <label>Fecha de cancelación</label>
+                    <input class="form-control" name="FechaCancelacion" type="date" />
+                    <span class="text-danger"></span>
+                </div>*@
+                <br />
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" onclick="prepararEnvio('seccion4form', 'seccion4')">Generar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Index" asp-controller="DetalleLoteModelo" asp-route-id="@Model.LoteId">Back to List</a>
+</div>
+
+<script>
+    var garantias; // Declarar la variable garantias a nivel global
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var secciones = document.getElementById('secciones');
+        garantias = document.getElementById('garantias'); // Asignar el valor a la variable global
+        var seccionForms = document.querySelectorAll('.seccion');
+
+        // Ocultar todas las secciones al cargar la página, excepto la primera
+        seccionForms.forEach(function (seccion, index) {
+            if (index === 0) {
+                seccion.style.display = 'block';
+            } else {
+                seccion.style.display = 'none';
+            }
+        });
+
+        // Mostrar la sección seleccionada
+        secciones.addEventListener('change', function () {
+            var seccionSeleccionada = secciones.value;
+
+            seccionForms.forEach(function (seccion) {
+                seccion.style.display = 'none';
+            });
+
+            document.getElementById(seccionSeleccionada).style.display = 'block';
+            if (seccionSeleccionada === 'seccion3') {
+                $('#formularioCambioGarantia').show();
+            }else{
+                $('#formularioCambioGarantia').hide();
+            }
+        });
+
+        garantias.addEventListener('change', function () {
+            var garantiaSeleccionada = garantias.value;
+
+            if (garantiaSeleccionada !== "0") {
+                document.getElementById('formularioGarantia').style.display = 'block';
+            } else {
+                document.getElementById('formularioGarantia').style.display = 'none';
+            }
+        });
+    });
+
+    function agregarGarantia() {
+        // Obtener los valores del formulario
+        var comentario = document.getElementById('comentario').value;
+        var garantiaSeleccionada = garantias.value;
+
+        // Validar que se haya seleccionado una garantía
+        if (garantiaSeleccionada === "0") {
+            alert("Selecciona una garantía antes de agregar.");
+            return;
+        }
+
+        // Obtener los datos de la garantía seleccionada usando el modelo
+        var selectedGarantia = document.querySelector('#garantias option:checked');
+        var idgarantia = selectedGarantia.value;
+        var nombreAval = selectedGarantia.text;
+        var agencia = '@Model.CentroCosto';
+        var contrato = '@Model.NumContrato';
+        var descripcion = document.getElementById('descripcion').value;
+        var nombre = document.getElementById('nombre').value;
+        var valor = document.getElementById('valor').value;
+
+        // Crear una nueva fila en la tabla de Garantías Seleccionadas
+        var table = document.querySelector('.table tbody');
+        var newRow = table.insertRow(table.rows.length);
+
+        // Insertar celdas con los valores obtenidos
+        var cellNombre = newRow.insertCell(0);
+        cellNombre.innerHTML = nombreAval;
+
+        var cellAgencia = newRow.insertCell(1);
+        cellAgencia.innerHTML = agencia;
+
+        var cellContrato = newRow.insertCell(2);
+        cellContrato.innerHTML = contrato;
+
+        var cellComentario = newRow.insertCell(3);
+        cellComentario.innerHTML = comentario;
+
+        var cellAcciones = newRow.insertCell(4);
+        cellAcciones.innerHTML = '<button class="btn btn-danger btn-sm" onclick="eliminarGarantia(this)">Eliminar</button>';
+
+        var cellId = newRow.insertCell(5);
+        cellId.style.display = 'none';
+        cellId.innerHTML = idgarantia;
+
+        var cellId = newRow.insertCell(6);
+        cellId.style.display = 'none';
+        cellId.innerHTML = descripcion;
+
+        var cellId = newRow.insertCell(7);
+        cellId.style.display = 'none';
+        cellId.innerHTML = nombre;
+
+        var cellId = newRow.insertCell(8);
+        cellId.style.display = 'none';
+        cellId.innerHTML = valor;
+
+        // Limpiar el formulario
+        document.getElementById('comentario').value = '';
+        descripcion = document.getElementById('descripcion').value = '';
+        nombre = document.getElementById('nombre').value = '';
+        valor = document.getElementById('valor').value = '';
+
+        // Eliminar la garantía del select
+        garantias.remove(garantias.selectedIndex);
+    }
+
+
+    function eliminarGarantia(button) {
+        var row = button.parentNode.parentNode;
+        var rowIndex = row.rowIndex;
+
+        // Obtener los valores de la fila
+        var nombreAval = row.cells[0].innerHTML;
+
+        // Obtener el valor de la garantía eliminada
+        var garantiaValue = obtenerValorGarantia(nombreAval);
+
+        // Agregar la opción de nuevo al select
+        var option = document.createElement('option');
+        option.value = garantiaValue;
+        option.text = nombreAval;
+        garantias.add(option, null);
+
+        // Eliminar la fila de la tabla
+        row.parentNode.removeChild(row);
+    }
+
+    function obtenerValorGarantia(nombreAval) {
+        // Iterar sobre las opciones del select y encontrar el valor correspondiente al nombre
+        var options = garantias.options;
+        for (var i = 0; i < options.length; i++) {
+            if (options[i].text === nombreAval) {
+                return options[i].value;
+            }
+        }
+        return null;
+    }
+
+    function prepararEnvio(formId, seccion) {
+
+        // Obtén la tabla de garantías seleccionadas
+        var table = document.getElementById('tablaGarantias');
+
+        // Obtén las filas de la tabla
+        var rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+        // Prepara un array para almacenar la información de las garantías seleccionadas
+        var garantiasSeleccionadas = [];
+
+        // Itera sobre las filas y agrega la información al array
+        for (var i = 0; i < rows.length; i++) {
+            var nombreAval = rows[i].cells[0].innerHTML;
+            var agencia = rows[i].cells[1].innerHTML;
+            var contrato = rows[i].cells[2].innerHTML;
+            var comentario = rows[i].cells[3].innerHTML;
+            var id = rows[i].cells[5].innerHTML;
+            var descripcion = rows[i].cells[6].innerHTML;
+            var nombre = rows[i].cells[7].innerHTML;
+            var valor = rows[i].cells[8].innerHTML;
+
+            garantiasSeleccionadas.push({
+                NombreAval: nombreAval,
+                Agencia: agencia,
+                Contrato: contrato,
+                Comentario: comentario,
+                Descripcion: descripcion,
+                Nombre: nombre,
+                Valor: valor,
+                id: id
+            });
+        }
+
+
+        // Obtén la referencia al formulario
+        var form = document.getElementById(formId);
+
+        // Asegúrate de que el elemento sección exista
+        var seccionElement = document.getElementById(seccion);
+        if (seccionElement) {
+            // Agrega un campo oculto al formulario con las garantías seleccionadas
+            var hiddenField = document.createElement('input');
+            hiddenField.type = 'hidden';
+            hiddenField.name = 'GarantiasSeleccionadas';
+            hiddenField.value = JSON.stringify(garantiasSeleccionadas);
+            form.appendChild(hiddenField);
+        }
+
+        // Envía el formulario después de agregar el campo oculto
+        form.submit();
+    }
+
+
+
+</script>

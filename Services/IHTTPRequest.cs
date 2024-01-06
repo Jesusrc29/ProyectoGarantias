@@ -1,8 +1,9 @@
-﻿namespace ProyectGarantia.Services
+﻿using ProyectGarantia.Models;
+
+namespace ProyectGarantia.Services
 {
     public interface IHTTPRequest
     {
-        //string ObtenerMensajeAsync();
-        Task<string> ObtenerMensajeAsync();
+        Task<List<DatosLoteGarantiasResponse>> ObtenerMensajeAsync(String CodAgencia, DateTime FechaDesde, DateTime FechaHasta);
     }
 }
