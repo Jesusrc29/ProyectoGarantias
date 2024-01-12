@@ -46,7 +46,7 @@ namespace ProyectGarantia.Models
             [Column("NombreAsesor")]
             public string NombreAsesor { get; set; }
             [Column("FechaEnvio")]
-        public DateOnly FechaEnvio { get; set; }
+        public DateOnly? FechaEnvio { get; set; }
         [Column("NombreCreador")]
             public string NombreCreador { get; set; }
         [Column("NumPrestamo")]

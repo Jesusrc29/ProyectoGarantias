@@ -404,7 +404,7 @@ namespace ProyectGarantia.Migrations
                         .HasColumnType("integer")
                         .HasColumnName("Estado");
 
-                    b.Property<DateOnly>("FechaEnvio")
+                    b.Property<DateOnly?>("FechaEnvio")
                         .HasColumnType("date")
                         .HasColumnName("FechaEnvio");
 

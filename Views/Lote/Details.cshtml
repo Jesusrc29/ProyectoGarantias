@@ -1,6 +1,4 @@
-﻿@* @model ProyectGarantia.Models.DetalleLote *@
-
-@using X.PagedList.Mvc.Core;
+﻿@using X.PagedList.Mvc.Core;
 @using X.PagedList;
 @model IEnumerable<ProyectGarantia.Models.DetalleLoteModelo>
 
@@ -48,7 +46,14 @@
             Fecha Envio
         </dt>
         <dd class="col-sm-10">
-            @Model.FirstOrDefault().FechaEnvio.ToString("dd/MM/yyyy")
+            @if (Model.FirstOrDefault().FechaEnvio.HasValue)
+            {
+                @Model.FirstOrDefault().FechaEnvio.Value.ToString("dd/MM/yyyy")
+            }
+            else
+            {
+                <text>Aún no se ha enviado</text>
+            }
         </dd>
     </dl>
 </div>
@@ -112,10 +117,6 @@
                     <a class="btn btn-dark btn-sm" role="button" asp-route-id="@Model?.FirstOrDefault()" asp-controller="DetalleLoteModelo" asp-action="Edit">Edit</a>
                     <a asp-action="Edit" asp-route-id="@item?.Id">Edit</a> |
 
-
-                    @* <a asp-action="Edit"  asp-controller="DetalleLoteModelo">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> *@
                 </td>
             </tr>
         }
@@ -126,7 +127,3 @@
         "DetalleLoteModelo",new{page=page}),X.PagedList.Web.Common.PagedListRenderOptions.MinimalWithItemCountText)
     </tfoot>
 </table>
-@* <div>
-    <a asp-action="Edit" asp-route-id="@Model?.FirstOrDefault().Id">Edit</a>
-    <a asp-action="Index">Back to List</a>
-</div> *@

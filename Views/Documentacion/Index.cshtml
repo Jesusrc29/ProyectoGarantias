@@ -2,24 +2,9 @@
 
 @{
     ViewData["Title"] = "Index";
-    //var informacionServicio = _httpRequest.ObtenerMensaje();
 }
 
 <h1>Generar Documentación</h1>
-@*<div>
-    <h3>Seleccionar Prestamo</h3>
-    <form>
-        <div class="row">
-            <div class="col-6">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Buscar prestamo" aria-label="Prestamo" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
-                </div>
-            </div>
-        </div>
-
-    </form>
-</div>*@
 <h4>Detalle del prestamo</h4>
 <div>
     <dl class="row">
@@ -150,12 +135,6 @@
                     <span class="text-danger"></span>
                 </div>
                 <div class="row">
-                    
-                    @*<div class="form-group col-6">
-                        <label>Fecha del prestamo</label>
-                        <input class="form-control" type="date" name="FechaPrestamo" />
-                        <span class="text-danger"></span>
-                    </div>*@
                 </div>
                 <div class="form-group">
                     <label>Motivo prestamo</label>
@@ -184,11 +163,6 @@
                     <input class="form-control" name="AutorizaCambio" />
                     <span class="text-danger"></span>
                 </div>
-                @*<div class="form-group">
-                    <label>Fecha de cambio</label>
-                    <input class="form-control" name="FechaCambio" type="date" />
-                    <span class="text-danger"></span>
-                </div>*@
                 <br />
                 <div class="form-group">
                     <button type="button" class="btn btn-primary" onclick="prepararEnvio('seccion2form', 'seccion2')">Generar</button>
@@ -205,11 +179,6 @@
                     <input class="form-control" name="AutorizaCambio" />
                     <span class="text-danger"></span>
                 </div>
-                @*<div class="form-group">
-                    <label>Fecha de cambio</label>
-                    <input class="form-control" name="FechaCambio" type="date" />
-                    <span class="text-danger"></span>
-                </div>*@
                 <br />
                 <div class="form-group">
                     <button type="button" class="btn btn-primary" onclick="prepararEnvio('seccion3form', 'seccion3')">Generar</button>
@@ -223,14 +192,9 @@
             <form id="seccion4form" asp-controller="Documentacion" asp-action="CancelaciónPrestamo" method="post">
                 <div class="form-group">
                     <label>Prestamo que se cancela</label>
-                    <input class="form-control" name="AutorizaCambio" />
+                    <input class="form-control" name="AutorizaCambio" value="@Model.NumPrestamo" readonly />
                     <span class="text-danger"></span>
                 </div>
-                @*<div class="form-group">
-                    <label>Fecha de cancelación</label>
-                    <input class="form-control" name="FechaCancelacion" type="date" />
-                    <span class="text-danger"></span>
-                </div>*@
                 <br />
                 <div class="form-group">
                     <button type="button" class="btn btn-primary" onclick="prepararEnvio('seccion4form', 'seccion4')">Generar</button>
@@ -245,14 +209,13 @@
 </div>
 
 <script>
-    var garantias; // Declarar la variable garantias a nivel global
+    var garantias; 
 
     document.addEventListener('DOMContentLoaded', function () {
         var secciones = document.getElementById('secciones');
-        garantias = document.getElementById('garantias'); // Asignar el valor a la variable global
+        garantias = document.getElementById('garantias');
         var seccionForms = document.querySelectorAll('.seccion');
 
-        // Ocultar todas las secciones al cargar la página, excepto la primera
         seccionForms.forEach(function (seccion, index) {
             if (index === 0) {
                 seccion.style.display = 'block';
@@ -261,7 +224,6 @@
             }
         });
 
-        // Mostrar la sección seleccionada
         secciones.addEventListener('change', function () {
             var seccionSeleccionada = secciones.value;
 
@@ -289,17 +251,14 @@
     });
 
     function agregarGarantia() {
-        // Obtener los valores del formulario
         var comentario = document.getElementById('comentario').value;
         var garantiaSeleccionada = garantias.value;
 
-        // Validar que se haya seleccionado una garantía
         if (garantiaSeleccionada === "0") {
             alert("Selecciona una garantía antes de agregar.");
             return;
         }
 
-        // Obtener los datos de la garantía seleccionada usando el modelo
         var selectedGarantia = document.querySelector('#garantias option:checked');
         var idgarantia = selectedGarantia.value;
         var nombreAval = selectedGarantia.text;
@@ -309,11 +268,9 @@
         var nombre = document.getElementById('nombre').value;
         var valor = document.getElementById('valor').value;
 
-        // Crear una nueva fila en la tabla de Garantías Seleccionadas
         var table = document.querySelector('.table tbody');
         var newRow = table.insertRow(table.rows.length);
 
-        // Insertar celdas con los valores obtenidos
         var cellNombre = newRow.insertCell(0);
         cellNombre.innerHTML = nombreAval;
 
@@ -345,13 +302,11 @@
         cellId.style.display = 'none';
         cellId.innerHTML = valor;
 
-        // Limpiar el formulario
         document.getElementById('comentario').value = '';
         descripcion = document.getElementById('descripcion').value = '';
         nombre = document.getElementById('nombre').value = '';
         valor = document.getElementById('valor').value = '';
 
-        // Eliminar la garantía del select
         garantias.remove(garantias.selectedIndex);
     }
 
@@ -360,24 +315,19 @@
         var row = button.parentNode.parentNode;
         var rowIndex = row.rowIndex;
 
-        // Obtener los valores de la fila
         var nombreAval = row.cells[0].innerHTML;
 
-        // Obtener el valor de la garantía eliminada
         var garantiaValue = obtenerValorGarantia(nombreAval);
 
-        // Agregar la opción de nuevo al select
         var option = document.createElement('option');
         option.value = garantiaValue;
         option.text = nombreAval;
         garantias.add(option, null);
 
-        // Eliminar la fila de la tabla
         row.parentNode.removeChild(row);
     }
 
     function obtenerValorGarantia(nombreAval) {
-        // Iterar sobre las opciones del select y encontrar el valor correspondiente al nombre
         var options = garantias.options;
         for (var i = 0; i < options.length; i++) {
             if (options[i].text === nombreAval) {
@@ -389,16 +339,12 @@
 
     function prepararEnvio(formId, seccion) {
 
-        // Obtén la tabla de garantías seleccionadas
         var table = document.getElementById('tablaGarantias');
 
-        // Obtén las filas de la tabla
         var rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
 
-        // Prepara un array para almacenar la información de las garantías seleccionadas
         var garantiasSeleccionadas = [];
 
-        // Itera sobre las filas y agrega la información al array
         for (var i = 0; i < rows.length; i++) {
             var nombreAval = rows[i].cells[0].innerHTML;
             var agencia = rows[i].cells[1].innerHTML;
@@ -422,13 +368,10 @@
         }
 
 
-        // Obtén la referencia al formulario
         var form = document.getElementById(formId);
 
-        // Asegúrate de que el elemento sección exista
         var seccionElement = document.getElementById(seccion);
         if (seccionElement) {
-            // Agrega un campo oculto al formulario con las garantías seleccionadas
             var hiddenField = document.createElement('input');
             hiddenField.type = 'hidden';
             hiddenField.name = 'GarantiasSeleccionadas';
@@ -436,7 +379,6 @@
             form.appendChild(hiddenField);
         }
 
-        // Envía el formulario después de agregar el campo oculto
         form.submit();
     }
 

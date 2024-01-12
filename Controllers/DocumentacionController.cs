@@ -401,7 +401,6 @@ namespace ProyectGarantia.Controllers
             doc.Close();
             writer.Close();
 
-            // Devolver el PDF como un archivo descargable.
             return File(memoryStream.ToArray(), "application/pdf", "SalidaCambioGarantia.pdf");
         }
 

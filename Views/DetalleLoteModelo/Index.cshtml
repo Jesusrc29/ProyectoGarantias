@@ -1,65 +1,96 @@
 ﻿@using X.PagedList.Mvc.Core;
 @using X.PagedList;
 @model IEnumerable<ProyectGarantia.Models.DetalleLoteModelo>
-
+@using Microsoft.AspNetCore.Identity;
+@using static ProyectGarantia.Data.ApplicationDbContext;
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+@inject IAuthorizationService AuthorizationService
 @{
     ViewData["Title"] = "Index";
 
 }
 
 <h1>Detalle del Lote</h1>
+@if (SignInManager.IsSignedIn(User))
+{
+    @if ((await AuthorizationService.AuthorizeAsync(User, "AllowLayoutOperador")).Succeeded)
+    {
+        <p>
+            <a class="btn btn-dark btn-sm" role="button" asp-controller="Lote" asp-action="Index">Volver a Lote</a>
+        </p>
+    }
+    @if ((await AuthorizationService.AuthorizeAsync(User, "AllowLayoutSupervisora")).Succeeded)
+    {
+        <p>
+            <a class="btn btn-dark btn-sm" role="button" asp-controller="Lote" asp-action="LotesEnviados">Volver a Lote</a>
+        </p>
+    }
+}
 
-<p>
-    @*<a asp-action="Create">Create New</a>*@
-    @*<a class="btn btn-success btn-sm" role="button" asp-action="Create">
-        Nuevo
-    </a>*@
-    <a class="btn btn-dark btn-sm" role="button" asp-controller="Lote" asp-action="Index">Volver a Lote</a>
-</p>
 <div>
     <h4>Lote</h4>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Lote)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FirstOrDefault().Lote.NumeroCorrelativo)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Lote.Estado)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FirstOrDefault().Lote.Estado)
-        </dd>
-        <dt class="col-sm-2">
-            Fecha Creación
-        </dt>
-        <dd class="col-sm-10">
-            @* @Model.FirstOrDefault().Lote.FechaCreacion.ToString("dd/MM/yyyy") *@
-            @(Model.FirstOrDefault()?.Lote?.FechaCreacion.ToString("dd/MM/yyyy") ?? "")
-        </dd>
-        <dt class="col-sm-2">
-            Creador
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FirstOrDefault().Lote.NombreCreador)
-        </dd>
-        <dt class="col-sm-2">
-            Agencia
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FirstOrDefault().CentroCosto)
-        </dd>
-        <dt class="col-sm-2">
-            Fecha Envio
-        </dt>
-        <dd class="col-sm-10">
-            @(Model.FirstOrDefault()?.FechaEnvio.ToString("dd/MM/yyyy") ?? "")
-            @* @Model.FirstOrDefault().FechaEnvio.ToString("dd/MM/yyyy") *@
-        </dd>
-    </dl>
+    <table class="table">
+        <thead>
+            <tr class="table-warning">
+                <th>
+                    @Html.DisplayNameFor(model => model.Lote)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Lote.Estado)
+                </th>
+                <th>
+                    Fecha Creación
+                </th>
+                <th>
+                    Creador
+                </th>
+                <th>
+                    Agencia
+                </th>
+                <th>
+                    Fecha Envio
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                var item = Model.First(); 
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Lote.NumeroCorrelativo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Lote.Estado)
+                    </td>
+                    <td>
+                        @item.Lote.FechaCreacion.ToString("dd/MM/yyyy")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Lote.NombreCreador)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CentroCosto)
+                    </td>
+                    <td>
+                        @if (item.FechaEnvio.HasValue)
+                        {
+                            @item.FechaEnvio.Value.ToString("dd/MM/yyyy")
+                        }
+                        else
+                        {
+                            <text>Aún no se ha enviado</text>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
+
 <div>
     <div class="col-6">
         <form asp-controller="DetalleLoteModelo" asp-action="Index" method="get">
@@ -94,10 +125,7 @@
             </th>
             <th>
                 Asesor
-            </th>@* 
-            <th>
-                @Html.DisplayNameFor(model => model.FechaEnvio)
-            </th> *@
+            </th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -116,18 +144,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ValorGarantia)
             </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.Contrato)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pagare)
-            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.NombreAsesor)
             </td>
-            @* <td>
-                    @item.FechaEnvio.ToString("dd/MM/yyyy")
-            </td> *@
             <td>
                   <a class="btn btn-warning btn-sm" role="button" asp-action="Edit" asp-route-loteId="@item.LoteId" asp-route-id="@item.Id">Edit</a>
                   <a class="btn btn-info btn-sm" role="button" asp-action="Details" asp-route-loteId="@item.LoteId" asp-route-id="@item.Id">Details</a>
@@ -167,7 +186,6 @@
 @section scripts {
     <script>
         $(document).ready(function () {
-            // Función para enviar la solicitud AJAX al hacer clic en BtnAceptar o BtnRechazar
             function enviarSolicitud(id, action, idLote) {
                 $.ajax({
                     url: '@Url.Action("", "")' + '/' + action,
@@ -175,21 +193,17 @@
                     data: { id: id },
                     success: function (response) {
                         if (response.exitoso) {
-                            // Redirigir a la URL de DetalleLoteModelo/Index con el id del lote
                             window.location.href = '@Url.Action("Index", "DetalleLoteModelo", new { id = "__id__" })'.replace('__id__', idLote);
                         } else {
-                            // Manejar otros casos de éxito o mostrar mensajes
                             alert(response.mensaje);
                         }
                     },
                     error: function () {
-                        // Manejar errores de la solicitud AJAX si es necesario
                         alert("Error al procesar la solicitud");
                     }
                 });
             }
 
-            // Manejar clic en BtnAceptar
             $('.btn-aceptar').on('click', function () {
                 var id = $(this).attr('data-route-id');
                 var action = $(this).attr('data-action');
@@ -197,7 +211,6 @@
                 enviarSolicitud(id, action, idLote);
             });
 
-            // Manejar clic en BtnRechazar
             $('.btn-rechazar').on('click', function () {
                 var id = $(this).attr('data-route-id');
                 var action = $(this).attr('data-action');

@@ -115,8 +115,16 @@
                 @Html.DisplayNameFor(model => model.DetalleLoteModelo.FechaEnvio)
             </dt>
             <dd class="col-sm-8">
-                @Model.DetalleLoteModelo.FechaEnvio.ToString("dd/MM/yyyy")
+                @if (Model.DetalleLoteModelo.FechaEnvio.HasValue)
+                {
+                    @Model.DetalleLoteModelo.FechaEnvio.Value.ToString("dd/MM/yyyy")
+                }
+                else
+                {
+                    <text>Aún no se ha enviado</text>
+                }
             </dd>
+
             <dt class="col-sm-4">
                 @Html.DisplayNameFor(model => model.DetalleLoteModelo.NombreCreador)
             </dt>

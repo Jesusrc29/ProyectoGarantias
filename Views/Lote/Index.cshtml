@@ -4,8 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>informacionServicio</h1>
-
+<h1>Lotes</h1>
 <p>
     <a class="btn btn-success btn-sm" role="button" asp-action="Create">Crear Lote</a>
 </p>
@@ -82,40 +81,11 @@
                 @Html.DisplayFor(modelItem => item.NombreCreador)
             </td>
                 <td>
-
-                        <a class="btn btn-primary btn-sm" role="button" asp-action="Enviar" asp-route-id="@item.Id">Enviar</a>
-                        <a class="btn btn-secondary btn-sm" role="button" asp-action="EnFirma" asp-route-id="@item.Id">En Firma</a>
+                        <a class="btn btn-primary btn-sm" role="button" onclick="confirmEnviar(@item.Id)">Enviar</a>
                         <a class="btn btn-warning btn-sm" role="button" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
                     
                     @Html.ActionLink("Ver Lote", "Details", "Lote", new { id= item.Id, page =1} , new {@class ="btn btn-info btn-sm"})
-                    <a class="btn btn-danger btn-sm" role="button" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-
-                    
-                         <button type="button" class="btn btn-success btn-sm btn-aprobar" data-id="@item.Id">
-                                Aprobar Lote
-                            </button>
-
-                            <div class="modal fade" id="contrasenaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Ingresar Contraseña</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                        <form id="formAprobarLote" asp-controller="Lote" asp-action="VerificarContrasenaAdmin" method="get">
-                                                <input type="hidden" name="id" value="@item.Id" />
-                                                <label for="password">Contraseña:</label>
-                                                <input type="password" name="password" />
-                                                <input type="submit" class="btn btn-primary" value="Aprobar Lote">
-                                        </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                                          
+            
         </tr>
 }
         }
@@ -124,60 +94,34 @@
 
  @section scripts {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
-                
-    <script>
-
-        $(function () {
-            $('.btn-aprobar').on('click', function () {
-                var loteId = $(this).data("id");
-                $.ajax({
-                    url: '/Lote/AprobarLote?id=' + loteId + '&isAjax=true',
-
-                    type: 'GET',
-                    success: function (result) {
-                        if (result.success) {
-                            
-                            if (result.requirePassword) {
-                                $('#contrasenaModal').modal('show');
-                            } else {
-                                alert("Aprobación exitosa");
-                                window.location.href = result.redirectUrl;
-                                
-                            }
-                        } else {
-                            alert("Error al aprobar el lote");
-                        }
-                    },
-                    error: function (error) {
-                        alert("Error al procesar la solicitud");
-                    }
-                });
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+        function confirmEnviar(itemId) {
+            Swal.fire({
+                title: '¿Deseas enviar esto?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, enviarlo'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = `/Lote/Enviar/${itemId}`;
+                }
             });
-        });
-        $(document).ready(function () {
-            $('#formAprobarLote').submit(function (e) {
-                e.preventDefault(); 
-                var formData = $(this).serialize(); 
-                console.log(formData);
-                $.ajax({
-                    type: 'GET',
-                    url: '/Lote/VerificarContrasenaAdmin',
-                    data: formData,
-                    success: function (result) {
-                        if (result) {
-                            location.reload(true);
-                            alert('Aprobación exitosa');
-                        } else {
-                            alert('No se encontró el usuario.');
-                        }
-                    },
-                    error: function () {
-                        alert('Error en la llamada AJAX.');
-                    }
-                });
-            });
-        });
+        }
     </script> 
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <script>
+            Swal.fire({
+                title: 'Enviado correctamente',
+                icon: 'success',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Aceptar'
+            });
+        </script>
+    }
 } 
  
 

@@ -255,27 +255,7 @@ namespace ProyectGarantia.Controllers
 
             if (resultadoLote && resultadoDetalleLote)
             {
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                return View(resultadoLote);
-            }
-        }
-
-        public IActionResult EnFirma(int id)
-        {
-            Lote lote = DALote.GetIdLote(id);
-            lote.Estado = EstadoLote.EnFirma;
-            DetalleLoteModelo detalleLote = DADetalleLote.GetDetalleLoteModeloPorLote(id).FirstOrDefault();
-
-            detalleLote.FechaEnvio = DateOnly.FromDateTime(DateTime.Now);
-
-            var resultadoLote = DALote.UpdateLote(lote);
-            var resultadoDetalleLote = DADetalleLote.UpdateDetalleLoteModelo(detalleLote);
-
-            if (resultadoLote && resultadoDetalleLote)
-            {
+                TempData["SuccessMessage"] = "El envío se realizó correctamente.";
                 return RedirectToAction("Index");
             }
             else
@@ -308,7 +288,7 @@ namespace ProyectGarantia.Controllers
                 DALote.UpdateLote(lote);
                 if (isAjax)
                 {
-                    return Json(new { success = true, requirePassword=false, redirectUrl = Url.Action("Index") });
+                    return Json(new { success = true, requirePassword=false, redirectUrl = Url.Action("LotesEnviados") });
                 }
                 else
                 {
@@ -402,7 +382,7 @@ namespace ProyectGarantia.Controllers
             _dbAgencia.Entry(lote).State = EntityState.Detached;
 
             var resultado = DALote.DeleteLote(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("LotesEnviados");
         }
 
         public async Task<ActionResult> GenerarReporte(DateTime fechaInicio, DateTime fechaFin, string estado, string formato)
