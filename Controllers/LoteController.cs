@@ -246,14 +246,18 @@ namespace ProyectGarantia.Controllers
         {
             Lote lote = DALote.GetIdLote(id);
             lote.Estado = EstadoLote.EnCurso;
-            DetalleLoteModelo detalleLote = DADetalleLote.GetDetalleLoteModeloPorLote(id).FirstOrDefault();
 
-            detalleLote.FechaEnvio = DateOnly.FromDateTime(DateTime.Now);
+            var detallesLote = DADetalleLote.GetDetalleLoteModeloPorLote(id);
+
+            foreach (var detalleLote in detallesLote)
+            {
+                detalleLote.FechaEnvio = DateOnly.FromDateTime(DateTime.Now);
+                DADetalleLote.UpdateDetalleLoteModelo(detalleLote);
+            }
 
             var resultadoLote = DALote.UpdateLote(lote);
-            var resultadoDetalleLote = DADetalleLote.UpdateDetalleLoteModelo(detalleLote); 
 
-            if (resultadoLote && resultadoDetalleLote)
+            if (resultadoLote)
             {
                 TempData["SuccessMessage"] = "El envío se realizó correctamente.";
                 return RedirectToAction("Index");
@@ -322,7 +326,7 @@ namespace ProyectGarantia.Controllers
             {
                 var listaususarios = await usuario.Users.ToListAsync();
                                 
-                var adminUsers = listaususarios.Where(user =>usuario.IsInRoleAsync(user, "Supervisora").Result)
+                var adminUsers = listaususarios.Where(user =>usuario.IsInRoleAsync(user, "Administrador").Result)
                      .ToList();
 
                 foreach (var item in adminUsers)
