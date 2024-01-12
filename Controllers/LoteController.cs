@@ -322,7 +322,7 @@ namespace ProyectGarantia.Controllers
             {
                 var listaususarios = await usuario.Users.ToListAsync();
                                 
-                var adminUsers = listaususarios.Where(user =>usuario.IsInRoleAsync(user, "Supervisora").Result)
+                var adminUsers = listaususarios.Where(user =>usuario.IsInRoleAsync(user, "Administrador").Result)
                      .ToList();
 
                 foreach (var item in adminUsers)
